@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* --------------------------------
+ * base
+ * -------------------------------- */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.2rem;
+    font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
+}
+
+body .wrapper{
+    margin: 10px;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+/* --------------------------------
+ * header
+ * -------------------------------- */
+
+header{
+    width: 100%;
+    margin: 10px 0 20px;
+}
+
+header .title{
+    font-size: 3.0rem;
+    font-weight: normal;
+}
+
+/* --------------------------------
+ * nationwide
+ * -------------------------------- */
+
+.nationwide{
+    position: relative;
+    margin-top: 40px;
+    width: 1120px;
+    height: 300px;
+}
+
+.nationwide .graph{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 300px;
+    border-radius: 5%;
+    border: 1px solid #b9e8ff;
+}
+
+.nationwide .info{
+    position: absolute;
+    top: 0;
+    left: 420px;
+    width: 600px;
+    height: 300px;
+    border-radius: 5%;
+    border: 1px solid #b9e8ff;
+}
+
+/* --------------------------------
+ * map
+ * -------------------------------- */
+
+ .map-area{
+    width: 1020px;
+    height: 600px;
+    margin-top: 20px;
+    border: 1px solid #b9e8ff;
+    border-radius: 2%;
+ }
+
+ /* --------------------------------
+ * prefecture
+ * -------------------------------- */
+
+ .prefecture-table{
+     margin: 10px 0 10px;
+ }
+
+  /* --------------------------------
+ * detail
+ * -------------------------------- */
+
+ .detail-graph{
+     margin: 10px 0 10px;
+ }
