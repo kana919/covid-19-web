@@ -165,7 +165,7 @@ header .title{
     border-top: 25px solid #999999;
 }
 
-.box.out{
+.box.stayhome{
     border-color: #ffd966;
 }
 
@@ -215,11 +215,19 @@ header .title{
      position: absolute;
      right: 0;
      width: 270px;
-     height: 480px;
+     height: 510px;
      border: 1px solid #b9e8ff;
      border-radius: 2%;
      padding: 10px;
      background-color: #fff;
+ }
+
+ .map-wrap .prefecture-name{
+     display: block;
+     font-weight: bold;
+     font-size: 2.4rem;
+     text-align: center;
+     margin: 5px 0;
  }
 
  .map-wrap .data .box{
@@ -227,13 +235,13 @@ header .title{
  }
 
  .map-wrap .dead.box,
- .map-wrap .out.box{
+ .map-wrap .stayhome.box{
      margin-left: 3px;
  }
 
  .map-wrap .recovery.box,
- .map-wrap .out.box{
-     margin-top: 90px;
+ .map-wrap .stayhome.box{
+     margin-top: 80px;
  }
 
  .map-wrap .total-num{
