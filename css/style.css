@@ -263,9 +263,39 @@ header .title{
  * -------------------------------- */
 
  .prefecture-table{
-     display: table;
      margin: 10px 0 10px;
+     font-size: 1.5rem;
  }
+
+ .prefecture-table .table-area
+ {
+     width: 850px;
+     border-spacing: 0;
+     margin: 0;
+     border-left: 1px solid #000;
+ }
+
+ .table-area td,
+ .table-area th
+ {
+    width: 85px;
+    height: 30px;
+    font-weight: normal;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+ }
+
+ .first-row td,
+ .first-row th
+ {
+     border:1px solid #000;
+     border-left-color: transparent;
+ }
+
+ .table-area th{
+     background-color: #b9e8ffff;
+ }
+ 
 
   /* --------------------------------
  * detail
