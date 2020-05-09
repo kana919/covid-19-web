@@ -7,46 +7,77 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="triangle a"></div>
             <header class="header">
                 <h1 class="title">新型コロナウィルス感染者情報</h1>
             </header>
             <section class="nationwide">
-                <div class="nationwide">
+                <div class="nationwide-info">
                     <div class="graph"></div>
-                    <div class="info">
+                    <div class="data">
                         <time class="date" datetime="2020-05-07">5月7日(木)</time>
                         <p class="title">全国の発生状況</p>
-                        <div class="box-wraper">
-                            <div class="box-infection">
-                                <p class="category"></p>
-                                <p class="num"></p>
+                        <div class="box-wrapper">
+                            <div class="infection box">
+                                <p class="category">感染者数</p>
+                                <p class="num">3人</p>
+                                <p class="total-num">1330人</p>
                             </div>
-                            <div class="box-dead">
-                                <p class="category"></p>
-                                <p class="num"></p>
+                            <div class="dead box">
+                                <p class="category">死者数</p>
+                                <p class="num">2人</p>
+                                <p class="total-num">1330人</p>
                             </div>
-                            <div class="box-recovery">
-                                <p class="category"></p>
-                                <p class="num"></p>
+                            <div class="recovery box">
+                                <p class="category">回復者数</p>
+                                <p class="num">1人</p>
+                                <p class="total-num">1330人</p>
                             </div>
-                            <div class="box-out">
-                                <p class="category"></p>
-                                <p class="num"></p>
+                            <div class="out box">
+                                <p class="category">外出率</p>
+                                <p class="num">15%</p>
                             </div>
                         </div>
+                        <p class="total">累計</p>
                     </div>
                 </div>
             </section>
             <section class="map">
-                <div class="map-area"></div>
+                <div class="map-wrap">
+                    <div class="data">
+                        <div class="map infection box">
+                            <p class="category">感染者数</p>
+                            <p class="num">3人</p>
+                            <p class="total-num">1330人</p>
+                        </div>
+                        <div class="map dead box">
+                            <p class="category">死者数</p>
+                            <p class="num">2人</p>
+                            <p class="total-num">1330人</p>
+                        </div>
+                        <div class="map recovery box">
+                            <p class="category">回復者数</p>
+                            <p class="num">1人</p>
+                            <p class="total-num">1330人</p>
+                        </div>
+                        <div class="map out box">
+                            <p class="category">外出率</p>
+                            <p class="num">15%</p>
+                        </div>
+                        <a class="button" href="#">詳細情報へ</a>
+                    </div>
+                </div>
             </section>
             <section class="prefecture">
                 <div class="prefecture-table">
                 </div>     
             </section>
             <section class="detail">
-                <div class="detail-grapg"></div>
+                <div class="detail-graph"></div>
             </section>
         </div>
     </body>
+    <footer>
+        <div class="triangle b"></div>
+    </footer>
 </html>

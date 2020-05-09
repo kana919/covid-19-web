@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* --------------------------------
  * base
  * -------------------------------- */
@@ -10,6 +11,29 @@ body{
     font-size: 1.2rem;
     font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
 }
+
+.triangle.a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1036px;
+    height: 500px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    z-index: -2;
+}
+
+.triangle.a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    border: 518px solid transparent;
+    border-bottom-width: 250px;
+    border-top-width: 250px;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    z-index: 1;
+}
+
 
 body .wrapper{
     margin: 10px;
@@ -37,50 +61,209 @@ header .title{
  * nationwide
  * -------------------------------- */
 
-.nationwide{
+.nationwide-info{
     position: relative;
     margin-top: 40px;
     width: 1120px;
     height: 300px;
+    font-size: 1.2rem;
 }
 
-.nationwide .graph{
+.nationwide-info .graph{
     position: absolute;
     top: 0;
     left: 0;
     width: 400px;
-    height: 300px;
+    height: 280px;
     border-radius: 5%;
     border: 1px solid #b9e8ff;
+    background-color: #fff;
 }
 
-.nationwide .info{
+.nationwide-info .data{
     position: absolute;
     top: 0;
     left: 420px;
     width: 600px;
-    height: 300px;
+    height: 280px;
     border-radius: 5%;
     border: 1px solid #b9e8ff;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.data .date{
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.data .title{
+    display: inline;
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.data .box-wrapper{
+    margin: 30px 0 10px 40px;
+}
+
+.data .box{
+    position: relative;
+    display:  inline-block;
+    border: 3px solid #e06666;
+    border-radius: 10%;
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+}
+
+.infection.box::before,
+.dead.box::before,
+.recovery.box::before{
+    content: "";
+    position: absolute;
+    bottom: -39px;
+    left: 37%;
+    border: 19px solid transparent;
+    border-top: 20px solid #fff;
+    z-index: 1;
+}
+
+.infection.box::after{
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 32%;
+    border: 25px solid transparent;
+    border-top: 25px solid #e06666;
+}
+
+.box.recovery{
+    border-color: #93c47d;
+}
+
+.recovery.box::after{
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 32%;
+    border: 25px solid transparent;
+    border-top: 25px solid #93c47d;
+}
+
+.dead.box{
+    border-color: #999999;
+}
+
+.dead.box::after{
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 32%;
+    border: 25px solid transparent;
+    border-top: 25px solid #999999;
+}
+
+.box.out{
+    border-color: #ffd966;
+}
+
+.box .category{
+    font-size: 2.0rem;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.box .num{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.0rem;
+    margin: 0;
+}
+
+.data .total-num{
+    position: absolute;
+    bottom: -75px;
+    font-weight: bold;
+    padding: 0 28px;
+}
+
+.data .total{
+    display: inline-block;
+    writing-mode: vertical-rl;
+    margin: 20px 10px 10px 5px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 /* --------------------------------
  * map
  * -------------------------------- */
 
- .map-area{
+ .map-wrap{
+    position: relative;
     width: 1020px;
     height: 600px;
-    margin-top: 20px;
     border: 1px solid #b9e8ff;
     border-radius: 2%;
+    background-color: #fff;
  }
+
+ .map-wrap .data{
+     position: absolute;
+     right: 0;
+     width: 270px;
+     height: 480px;
+     border: 1px solid #b9e8ff;
+     border-radius: 2%;
+     padding: 10px;
+     background-color: #fff;
+ }
+
+ .map-wrap .data .box{
+    margin: 0;
+ }
+
+ .map-wrap .dead.box,
+ .map-wrap .out.box{
+     margin-left: 3px;
+ }
+
+ .map-wrap .recovery.box,
+ .map-wrap .out.box{
+     margin-top: 90px;
+ }
+
+ .map-wrap .total-num{
+     font-size: 1.5rem;
+ }
+
+ .map-wrap .button{
+     position: absolute;
+     bottom: 10px;
+     left: 35px;
+     width: 200px;
+     height: 40px;
+     border: 1px solid #8fd3f4;
+     border-radius: 15px;
+     color: #000;
+     background-color: #b9e8ffff;
+     text-decoration: none;
+     text-align: center;
+     font-size: 1.7rem;
+     line-height: 3.4rem;
+ }
+
+
 
  /* --------------------------------
  * prefecture
  * -------------------------------- */
 
  .prefecture-table{
+     display: table;
      margin: 10px 0 10px;
  }
 
@@ -90,4 +273,35 @@ header .title{
 
  .detail-graph{
      margin: 10px 0 10px;
+     width: 1020px;
+     height: 600px;
+     border: 1px solid #8fd3f4;
+     border-radius: 2%;
  }
+
+   /* --------------------------------
+ * footer
+ * -------------------------------- */
+/*
+.triangle.b{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1036px;
+    height: 500px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    z-index: -2;
+}
+
+.triangle.b::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    border: 518px solid transparent;
+    border-bottom-width: 250px;
+    border-top-width: 250px;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    z-index: 1;
+}
+*/
