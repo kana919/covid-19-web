@@ -9,6 +9,10 @@ export default class InfectionGraph {
     am4core.useTheme(am4themes_material);
     am4core.useTheme(am4themes_animated);
     this.chart = am4core.create(divId, am4charts.XYChart);
+    this.chart.width = am4core.percent(98);
+    this.chart.height = am4core.percent(98);
+    // disable logo
+    this.chart.logo.height = -15000;
   }
 
   render(data) {
@@ -23,7 +27,7 @@ export default class InfectionGraph {
       count: 1
     }
     dateAxis.dateFormatter = new am4core.DateFormatter();
-    dateAxis.dateFormats.setKey("day", "MM月dd日");
+    dateAxis.dateFormats.setKey("day", "MM/dd");
     let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
 
@@ -38,9 +42,11 @@ export default class InfectionGraph {
     death.tooltip.getStrokeFromObject = true;
     death.tooltip.background.strokeWidth = 3;
     death.sequencedInterpolation = true;
+    death.fill = am4core.color("#999999");
     death.fillOpacity = 0.6;
     death.defaultState.transitionDuration = 1000;
     death.stacked = true;
+    death.stroke = am4core.color("#999999");
     death.strokeWidth = 2;
 
     let recovery = this.chart.series.push(new am4charts.LineSeries());
@@ -54,8 +60,10 @@ export default class InfectionGraph {
     recovery.tooltip.getStrokeFromObject = true;
     recovery.tooltip.background.strokeWidth = 3;
     recovery.sequencedInterpolation = true;
+    recovery.fill = am4core.color("#93c47d");
     recovery.fillOpacity = 0.6;
     recovery.stacked = true;
+    recovery.stroke = am4core.color("#93c47d");
     recovery.strokeWidth = 2;
 
     let infection = this.chart.series.push(new am4charts.LineSeries());
@@ -68,7 +76,9 @@ export default class InfectionGraph {
     infection.tooltip.getStrokeFromObject = true;
     infection.tooltip.background.strokeWidth = 3;
     infection.tooltip.getFillFromObject = false;
+    infection.fill = am4core.color("#e06666");
     infection.fillOpacity = 0.6;
+    infection.stroke = am4core.color("#e06666");
     infection.strokeWidth = 2;
     infection.stacked = true;
 

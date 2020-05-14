@@ -19,7 +19,6 @@ export class App {
         // グラフを表示
         const graph = new InfectionGraph("graph");
         graph.render(infectionInfo);
-        console.log(infectionInfo);
         // 感染者情報を表示
         displayJapanStats(infectionInfo);
       });
@@ -45,6 +44,10 @@ export class App {
 
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
+
+        // グラフの表示
+        const graph = new InfectionGraph("detail-graph");
+        graph.render(infectionInfo[12].daily);
       });
     } catch (error) {
       console.error(`${error}`);

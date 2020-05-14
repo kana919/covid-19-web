@@ -116651,6 +116651,10 @@ class InfectionGraph_InfectionGraph {
     useTheme(material);
     useTheme(animated);
     this.chart = create(divId, XYChart_XYChart);
+    this.chart.width = Percent_percent(98);
+    this.chart.height = Percent_percent(98);
+    // disable logo
+    this.chart.logo.height = -15000;
   }
 
   render(data) {
@@ -116665,7 +116669,7 @@ class InfectionGraph_InfectionGraph {
       count: 1
     }
     dateAxis.dateFormatter = new DateFormatter_DateFormatter();
-    dateAxis.dateFormats.setKey("day", "MM月dd日");
+    dateAxis.dateFormats.setKey("day", "MM/dd");
     let valueAxis = this.chart.yAxes.push(new ValueAxis_ValueAxis());
     valueAxis.tooltip.disabled = true;
 
@@ -116680,9 +116684,11 @@ class InfectionGraph_InfectionGraph {
     death.tooltip.getStrokeFromObject = true;
     death.tooltip.background.strokeWidth = 3;
     death.sequencedInterpolation = true;
+    death.fill = Color_color("#999999");
     death.fillOpacity = 0.6;
     death.defaultState.transitionDuration = 1000;
     death.stacked = true;
+    death.stroke = Color_color("#999999");
     death.strokeWidth = 2;
 
     let recovery = this.chart.series.push(new LineSeries_LineSeries());
@@ -116696,8 +116702,10 @@ class InfectionGraph_InfectionGraph {
     recovery.tooltip.getStrokeFromObject = true;
     recovery.tooltip.background.strokeWidth = 3;
     recovery.sequencedInterpolation = true;
+    recovery.fill = Color_color("#93c47d");
     recovery.fillOpacity = 0.6;
     recovery.stacked = true;
+    recovery.stroke = Color_color("#93c47d");
     recovery.strokeWidth = 2;
 
     let infection = this.chart.series.push(new LineSeries_LineSeries());
@@ -116710,7 +116718,9 @@ class InfectionGraph_InfectionGraph {
     infection.tooltip.getStrokeFromObject = true;
     infection.tooltip.background.strokeWidth = 3;
     infection.tooltip.getFillFromObject = false;
+    infection.fill = Color_color("#e06666");
     infection.fillOpacity = 0.6;
+    infection.stroke = Color_color("#e06666");
     infection.strokeWidth = 2;
     infection.stacked = true;
 
@@ -116744,7 +116754,6 @@ class App_App {
         // グラフを表示
         const graph = new InfectionGraph_InfectionGraph("graph");
         graph.render(infectionInfo);
-        console.log(infectionInfo);
         // 感染者情報を表示
         displayJapanStats(infectionInfo);
       });
@@ -116770,6 +116779,10 @@ class App_App {
 
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
+
+        // グラフの表示
+        const graph = new InfectionGraph_InfectionGraph("detail-graph");
+        graph.render(infectionInfo[12].daily);
       });
     } catch (error) {
       console.error(`${error}`);
