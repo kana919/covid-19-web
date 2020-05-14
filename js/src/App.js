@@ -1,4 +1,5 @@
 import moment from 'moment';
+import InfectionGraph from './components/InfectionGraph.js'
 
 
 export class App {
@@ -15,6 +16,11 @@ export class App {
       // 日本の感染情報を取得
       this.japanInfectionInfo = fetchFromAPI(`${this.apiDomain}/stats/infection/japan`);
       this.japanInfectionInfo.then(infectionInfo => {
+        // グラフを表示
+        const graph = new InfectionGraph("graph");
+        graph.render(infectionInfo);
+        console.log(infectionInfo);
+        // 感染者情報を表示
         displayJapanStats(infectionInfo);
       });
 
