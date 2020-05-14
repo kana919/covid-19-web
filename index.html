@@ -15,7 +15,7 @@
                 <div class="nationwide-info">
                     <div class="graph"></div>
                     <div class="data">
-                        <time class="date" datetime="2020-05-07">5月7日(木)</time>
+                        <time id="date" class="date" datetime="2020-05-07">- 月 - 日 (-)</time>
                         <p class="title">全国の発生状況</p>
                         <div class="box-wrapper">
                             <div class="infection box">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="stayhome box">
                                 <p class="category">自粛率</p>
-                                <p class="num">15%</p>
+                                <p id="jp-stay-home-ratio" class="num">15%</p>
                             </div>
                         </div>
                         <p class="total">累計</p>
@@ -45,21 +45,21 @@
             <section class="map">
                 <div class="map-wrap">
                     <div class="data">
-                        <p class="prefecture-name">東京都</p>
+                        <p id="prefecture-name" class="prefecture-name"></p>
                         <div class="map infection box">
                             <p class="category">感染者数</p>
-                            <p id="infection-num" class="num">3人</p>
-                            <p id="total-infection-num" class="total-num">1330人</p>
+                            <p id="infection-num" class="num">- 人</p>
+                            <p id="total-infection-num" class="total-num">- 人</p>
                         </div>
                         <div class="map dead box">
                             <p class="category">死者数</p>
-                            <p id="dead-num" class="num">2人</p>
-                            <p id="total-dead-num" class="total-num">1330人</p>
+                            <p id="dead-num" class="num">- 人</p>
+                            <p id="total-dead-num" class="total-num">- 人</p>
                         </div>
                         <div class="map recovery box">
                             <p class="category">回復者数</p>
                             <p id="recovery-num" class="num">1人</p>
-                            <p id="total-recovery-num" class="total-num">1330人</p>
+                            <p id="total-recovery-num" class="total-num">- 人</p>
                         </div>
                         <div class="map stayhome box">
                             <p class="category">自粛率</p>
@@ -73,61 +73,93 @@
                 <div class="prefecture-table">
                     <table class="table-area">
                         <tr>
-                            <th>都道府県名<th>感染者数</th><td></td><td></td><td></td><td></td>
+                            <th>都道府県名</th><th>感染者数</th>
+                            <td>富山県</td><td id="Toyama"></td>
+                            <td>鳥取県</td><td id="Tottori"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>北海道</td><td id="Hokkaido"></td>
+                            <td>石川県</td><td id="Ishikawa"></td>
+                            <td>岡山県</td><td id="Okayama"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>青森県</td><td id="Aomori"></td>
+                            <td>福井県</td><td id="Fukui"></td>
+                            <td>広島県</td><td id="Hiroshima"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>岩手県</td><td id="Iwate"></td>
+                            <td>山梨県</td><td id="Yamanashi"></td>
+                            <td>山口県</td><td id="Yamaguchi"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>宮城県</td><td id="Miyagi"></td>
+                            <td>長野県</td><td id="Nagano"></td>
+                            <td>徳島県</td><td id="Tokushima"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>秋田県</td><td id="Akita"></td>
+                            <td>岐阜県</td><td id="Gifu"></td>
+                            <td>香川県</td><td id="Kagawa"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>山形県</td><td id="Yamagata"></td>
+                            <td>静岡県</td><td id="Shizuoka"></td>
+                            <td>愛媛県</td><td id="Ehime"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>福島県</td><td id="Fukushima"></td>
+                            <td>愛知県</td><td id="Aichi"></td>
+                            <td>高知県</td><td id="Kochi"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>茨城県</td><td id="Ibaraki"></td>
+                            <td>三重県</td><td id="Mie"></td>
+                            <td>福岡県</td><td id="Fukuoka"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>栃木県</td><td id="Tochigi"></td>
+                            <td>滋賀県</td><td id="Shiga"></td>
+                            <td>佐賀県</td><td id="Saga"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>群馬県</td><td id="Gunma"></td>
+                            <td>京都県</td><td id="Kyoto"></td>
+                            <td>長崎県</td><td id="Nagasaki"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>埼玉県</td><td id="Saitama"></td>
+                            <td>大阪府</td><td id="Osaka"></td>
+                            <td>熊本県</td><td id="Kumamoto"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>千葉県</td><td id="Chiba"></td>
+                            <td>兵庫県</td><td id="Hyogo"></td>
+                            <td>大分県</td><td id="Oita"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>東京都</td><td id="Tokyo"></td>
+                            <td>奈良県</td><td id="Nara"></td>
+                            <td>宮崎県</td><td id="Miyazaki"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>神奈川県</td><td id="Kanagawa"></td>
+                            <td>和歌山県</td><td id="Wakayama"></td>
+                            <td>鹿児島県</td><td id="Kagoshima"></td>
                         </tr>
                         <tr>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>新潟県</td><td id="Niigata"></td>
+                            <td>島根県</td><td id="Shimane"></td>
+                            <td>沖縄県</td><td id="Okinawa"></td>
                         </tr>
-                    </table>  
-                </div>   
+                    </table>
+                </div>
             </section>
             <section class="detail">
                 <div class="detail-graph"></div>
             </section>
         </div>
-        <script type="module" src="./js/index.js"></script>
+        <script type="module" src="./js/dist/main.js"></script>
     </body>
     <footer>
         <div class="triangle b"></div>
