@@ -21,7 +21,8 @@ export class App {
       // 行動情報を取得
       this.behaviorInfo = fetchFromAPI(`${this.apiDomain}/stats/behavior`);
       this.behaviorInfo.then(behaviorInfo => {
-        displayBehaviorStats(behaviorInfo);
+        // TODO: 実装
+        // displayBehaviorStats(behaviorInfo);
       });
 
       // 都道府県ごとの感染情報を取得
@@ -75,7 +76,7 @@ function displayJapanStats(infectionInfo) {
   const recoveryNumElement = document.querySelector("#jp-recovery-num");
   const deadNumElement = document.querySelector("#jp-dead-num");
 
-  infectionNumElement.innerHTML = infectionInfo[0].current_infected + '人';
+  infectionNumElement.innerHTML = infectionInfo[0].new_infected + '人';
   recoveryNumElement.innerHTML = infectionInfo[0].total_recovered - infectionInfo[1].total_recovered + '人';
   deadNumElement.innerHTML = infectionInfo[0].total_death - infectionInfo[1].total_death + '人';
 
@@ -103,6 +104,7 @@ function displayPrefectureStats(infectionInfo) {
   }
 }
 
+// TODO: 実装
 function displayBehaviorStats(behaviorInfo) {
   const stayHomeElement = document.querySelector("#jp-stay-home-ratio");
 }
@@ -115,7 +117,6 @@ function displayPrefectureStatsOverview(info) {
   const prefNameElement = document.querySelector('#prefecture-name');
   prefNameElement.innerHTML = info.name;
 
-  //
   const infectionNumElement = document.querySelector("#infection-num");
   const recoveryNumElement = document.querySelector("#recovery-num");
   const deadNumElement = document.querySelector("#dead-num");
@@ -126,10 +127,10 @@ function displayPrefectureStatsOverview(info) {
 
   if (info.daily.length > 0) {
     // データが存在している場合は現在感染者数を表示
-    infectionNumElement.innerHTML = info.daily[0].current_infected + '人';
-    recoveryNumElement.innerHTML = info.total_recovered + '人';
-    deadNumElement.innerHTML = info.total_death + '人';
-    totalInfectionNumElement.innerHTML = info.daily[0].current_infected + '人';
+    infectionNumElement.innerHTML = info.daily[0].new_infected + '人';
+    recoveryNumElement.innerHTML = info.daily[0].recovered + '人';
+    deadNumElement.innerHTML = info.daily[0].death + '人';
+    totalInfectionNumElement.innerHTML = info.daily[0].total_infected + '人';
     totalRecoveryNumElement.innerHTML = info.total_recovered + '人';
     totalDeadNumElement.innerHTML = info.total_death + '人';
   } else {
