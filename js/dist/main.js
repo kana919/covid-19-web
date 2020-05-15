@@ -116853,7 +116853,11 @@ function displayBehaviorStats(behaviorInfo) {
 }
 
 function handleEventDisplayStats(e) {
+  // 概要情報の表示
   displayPrefectureStatsOverview(this.info);
+  // 詳細グラフの表示
+  const graph = new InfectionGraph_InfectionGraph("detail-graph");
+  graph.render(this.info.daily);
 }
 
 function displayPrefectureStatsOverview(info) {
