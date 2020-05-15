@@ -45,7 +45,7 @@ export class App {
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
 
-        // グラフの表示
+        // 詳細グラフの表示
         const graph = new InfectionGraph("detail-graph");
         graph.render(infectionInfo[12].daily);
       });
@@ -134,18 +134,23 @@ function displayPrefectureStatsOverview(info) {
   const totalRecoveryNumElement = document.querySelector("#total-recovery-num");
   const totalDeadNumElement = document.querySelector("#total-dead-num");
 
-  if (info.daily.length > 0) {
+  if (info.daily.length > 1) {
     // データが存在している場合は現在感染者数を表示
     infectionNumElement.innerHTML = info.daily[0].new_infected + '人';
-    recoveryNumElement.innerHTML = info.daily[0].recovered + '人';
-    deadNumElement.innerHTML = info.daily[0].death + '人';
+    recoveryNumElement.innerHTML = info.daily[0].total_recovered - info.daily[1].total_recovered + '人';
+    deadNumElement.innerHTML = info.daily[0].total_death - info.daily[1].total_death + '人';
+
     totalInfectionNumElement.innerHTML = info.daily[0].total_infected + '人';
-    totalRecoveryNumElement.innerHTML = info.total_recovered + '人';
-    totalDeadNumElement.innerHTML = info.total_death + '人';
+    totalRecoveryNumElement.innerHTML = info.daily[0].total_recovered + '人';
+    totalDeadNumElement.innerHTML = info.daily[0].total_death + '人';
   } else {
     // データがない場合は不明
     infectionNumElement.innerHTML = '- 人';
     recoveryNumElement.innerHTML = '- 人';
     deadNumElement.innerHTML = '- 人';
+
+    totalInfectionNumElement.innerHTML = '- 人';
+    totalRecoveryNumElement.innerHTML = '- 人';
+    totalDeadNumElement.innerHTML = '- 人';
   }
 }
