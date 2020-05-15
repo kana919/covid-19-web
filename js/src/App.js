@@ -1,5 +1,6 @@
 import moment from 'moment';
 import InfectionGraph from './components/InfectionGraph.js'
+import InfectionMap from './components/InfectionMap.js'
 
 
 export class App {
@@ -41,6 +42,9 @@ export class App {
           let prefCellElement = document.querySelector(`#${info.name_en}`);
           prefCellElement.addEventListener("mouseover", {info: info, handleEvent: handleEventDisplayStats});
         }
+
+        const map = new InfectionMap("map");
+        map.render();
 
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
