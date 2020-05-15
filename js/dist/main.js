@@ -116659,7 +116659,6 @@ class InfectionGraph_InfectionGraph {
 
   render(data) {
     this.chart.data = data;
-    this.chart.dateFormatter.inputDateFormat = "yyyy-MM-dd";
     let dateAxis = this.chart.xAxes.push(new DateAxis_DateAxis());
     dateAxis.renderer.minGridDistance = 60;
     dateAxis.startLocation = 0.5;
@@ -116753,7 +116752,6 @@ class App_App {
       this.japanInfectionInfo.then(infectionInfo => {
         // グラフを表示
         const graph = new InfectionGraph_InfectionGraph("graph");
-        console.log(infectionInfo);
         graph.render(infectionInfo);
         // 感染者情報を表示
         displayJapanStats(infectionInfo);
@@ -116781,10 +116779,9 @@ class App_App {
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
 
-        // グラフの表示
+        // 詳細グラフの表示
         const graph = new InfectionGraph_InfectionGraph("detail-graph");
-        console.log(infectionInfo[0].daily);
-        graph.render(infectionInfo[0].daily);
+        graph.render(infectionInfo[12].daily);
       });
     } catch (error) {
       console.error(`${error}`);
@@ -116866,6 +116863,7 @@ function displayPrefectureStatsOverview(info) {
   const infectionNumElement = document.querySelector("#infection-num");
   const recoveryNumElement = document.querySelector("#recovery-num");
   const deadNumElement = document.querySelector("#dead-num");
+  const stayHomeRatioElement = document.querySelector("#stayhome-ratio");
 
   const totalInfectionNumElement = document.querySelector("#total-infection-num");
   const totalRecoveryNumElement = document.querySelector("#total-recovery-num");
@@ -116880,6 +116878,12 @@ function displayPrefectureStatsOverview(info) {
     totalInfectionNumElement.innerHTML = info.daily[0].total_infected + '人';
     totalRecoveryNumElement.innerHTML = info.daily[0].total_recovered + '人';
     totalDeadNumElement.innerHTML = info.daily[0].total_death + '人';
+
+    if (info.daily[0].restraint_ratio) {
+      stayHomeRatioElement.innerHTML = parseInt(info.daily[0].restraint_ratio * 100) + '%'
+    } else {
+      stayHomeRatioElement.innerHTML = '- %';
+    }
   } else {
     // データがない場合は不明
     infectionNumElement.innerHTML = '- 人';
@@ -116889,6 +116893,8 @@ function displayPrefectureStatsOverview(info) {
     totalInfectionNumElement.innerHTML = '- 人';
     totalRecoveryNumElement.innerHTML = '- 人';
     totalDeadNumElement.innerHTML = '- 人';
+
+    stayHomeRatioElement.innerHTML = '- %';
   }
 }
 

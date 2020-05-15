@@ -129,6 +129,7 @@ function displayPrefectureStatsOverview(info) {
   const infectionNumElement = document.querySelector("#infection-num");
   const recoveryNumElement = document.querySelector("#recovery-num");
   const deadNumElement = document.querySelector("#dead-num");
+  const stayHomeRatioElement = document.querySelector("#stayhome-ratio");
 
   const totalInfectionNumElement = document.querySelector("#total-infection-num");
   const totalRecoveryNumElement = document.querySelector("#total-recovery-num");
@@ -143,6 +144,12 @@ function displayPrefectureStatsOverview(info) {
     totalInfectionNumElement.innerHTML = info.daily[0].total_infected + '人';
     totalRecoveryNumElement.innerHTML = info.daily[0].total_recovered + '人';
     totalDeadNumElement.innerHTML = info.daily[0].total_death + '人';
+
+    if (info.daily[0].restraint_ratio) {
+      stayHomeRatioElement.innerHTML = parseInt(info.daily[0].restraint_ratio * 100) + '%'
+    } else {
+      stayHomeRatioElement.innerHTML = '- %';
+    }
   } else {
     // データがない場合は不明
     infectionNumElement.innerHTML = '- 人';
@@ -152,5 +159,7 @@ function displayPrefectureStatsOverview(info) {
     totalInfectionNumElement.innerHTML = '- 人';
     totalRecoveryNumElement.innerHTML = '- 人';
     totalDeadNumElement.innerHTML = '- 人';
+
+    stayHomeRatioElement.innerHTML = '- %';
   }
 }

@@ -17,7 +17,6 @@ export default class InfectionGraph {
 
   render(data) {
     this.chart.data = data;
-    this.chart.dateFormatter.inputDateFormat = "yyyy-MM-dd";
     let dateAxis = this.chart.xAxes.push(new am4charts.DateAxis());
     dateAxis.renderer.minGridDistance = 60;
     dateAxis.startLocation = 0.5;
