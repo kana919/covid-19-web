@@ -214,12 +214,12 @@ header .title{
  }
 
  .map-wrap .chart {
-   position: absolute;
-   left: 20px;
-   top: 20px;
-   width: 730px;
-   height: 580px;
-   padding: 10px;
+     position: absolute;
+     left: 20px;
+     top: 20px;
+     width: 730px;
+     height: 580px;
+     padding: 10px;
  }
 
  .map-wrap .data{
