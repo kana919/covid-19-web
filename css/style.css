@@ -73,7 +73,7 @@ header .title{
     position: absolute;
     top: 0;
     left: 0;
-    width: 400px;
+    width: 500px;
     height: 280px;
     border-radius: 5%;
     border: 1px solid #b9e8ff;
@@ -84,8 +84,8 @@ header .title{
 .nationwide-info .data{
     position: absolute;
     top: 0;
-    left: 420px;
-    width: 600px;
+    left: 520px;
+    width: 500px;
     height: 280px;
     border-radius: 5%;
     border: 1px solid #b9e8ff;
@@ -106,7 +106,7 @@ header .title{
 }
 
 .data .box-wrapper{
-    margin: 30px 0 10px 40px;
+    margin: 20px 0 10px 70px;
 }
 
 .data .box{
@@ -192,12 +192,24 @@ header .title{
     text-align: center;
 }
 
+.data .current-num{
+    position: absolute;
+    bottom: -105px;
+    width: 120px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .data .total{
-    display: inline-block;
-    writing-mode: vertical-rl;
-    margin: 20px 10px 10px 5px;
     font-size: 1.8rem;
     font-weight: bold;
+    margin:35px 0 0;
+}
+
+.data .current{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 /* --------------------------------
