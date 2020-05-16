@@ -37,17 +37,27 @@ export class App {
         // 東京都の感染情報の概要表示
         displayPrefectureStatsOverview(infectionInfo[12]);
 
-        // イベントリスナーの登録
-        for (let info of infectionInfo) {
-          let prefCellElement = document.querySelector(`#${info.name_en}`);
-          prefCellElement.addEventListener("mouseover", {info: info, handleEvent: handleEventDisplayStats});
-        }
-
+        // 地図の表示
         const map = new InfectionMap("map");
+        // 地図上のマウスオーバーのイベントリスナーの登録
+        map.addEventFunc(function(ev) {
+          const prefId = ev.target.dataItem.dataContext.id;
+          const index = parseInt(prefId.split("JP-")[1]) - 1;
+          // 概要情報の更新
+          displayPrefectureStatsOverview(infectionInfo[index]);
+          // 詳細グラフの更新
+          const graph = new InfectionGraph("detail-graph");
+          graph.render(infectionInfo[index].daily);
+        });
         map.render();
 
         // 各都道府県の感染情報テーブル表示
         displayPrefectureStats(infectionInfo);
+        // テーブル上のマウスオーバーのイベントリスナーの登録
+        for (let info of infectionInfo) {
+          let prefCellElement = document.querySelector(`#${info.name_en}`);
+          prefCellElement.addEventListener("mouseover", {info: info, handleEvent: handleEventDisplayStats});
+        }
 
         // 詳細グラフの表示
         const graph = new InfectionGraph("detail-graph");
