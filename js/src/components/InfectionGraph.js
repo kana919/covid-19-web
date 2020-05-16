@@ -4,7 +4,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
 
 
-export default class InfectionGraph {
+export class InfectionGraph {
   constructor(divId) {
     am4core.useTheme(am4themes_material);
     am4core.useTheme(am4themes_animated);
@@ -12,7 +12,7 @@ export default class InfectionGraph {
     this.chart.width = am4core.percent(98);
     this.chart.height = am4core.percent(98);
     // disable logo
-    this.chart.logo.height = -15000;
+    // this.chart.logo.height = -15000;
   }
 
   render(data) {
@@ -86,5 +86,9 @@ export default class InfectionGraph {
     // Add a legend
     this.chart.legend = new am4charts.Legend();
     this.chart.legend.position = "top";
+  }
+
+  update(data) {
+    this.chart.data = data;
   }
 }

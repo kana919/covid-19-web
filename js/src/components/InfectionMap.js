@@ -5,12 +5,11 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import JapanMap from "./JapanMap.js";
 
 
-export default class InfectionMap {
+export class InfectionMap {
   constructor(divId) {
     am4core.useTheme(am4themes_animated);
     this.chart = am4core.create(divId, am4maps.MapChart);
-    const map = new JapanMap();
-    this.chart.geodata = map.getGeoData();
+    this.chart.geodata = new JapanMap().getGeoData();
     this.eventFunc = null;
   }
 
@@ -34,7 +33,6 @@ export default class InfectionMap {
     // Configure series
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    console.log(polygonTemplate.tooltipText);
     polygonTemplate.fill = this.chart.colors.getIndex(0);
 
     // Create hover state and set alternative fill color
