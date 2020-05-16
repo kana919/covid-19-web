@@ -213,6 +213,15 @@ header .title{
     background-color: #fff;
  }
 
+ .map-wrap .chart {
+     position: absolute;
+     left: 20px;
+     top: 20px;
+     width: 730px;
+     height: 580px;
+     padding: 10px;
+ }
+
  .map-wrap .data{
      position: absolute;
      right: 0;
