@@ -9,8 +9,7 @@ export class InfectionMap {
   constructor(divId) {
     am4core.useTheme(am4themes_animated);
     this.chart = am4core.create(divId, am4maps.MapChart);
-    const map = new JapanMap();
-    this.chart.geodata = map.getGeoData();
+    this.chart.geodata = new JapanMap().getGeoData();
     this.eventFunc = null;
   }
 
@@ -18,7 +17,7 @@ export class InfectionMap {
     this.chart.geodata.features[0].properties.name = '北海道';
   }
 
-  async render() {
+  render() {
     // Set projection
     this.chart.projection = new am4maps.projections.Miller();
     this.chart.panBehavior = "rotateLongLat";
