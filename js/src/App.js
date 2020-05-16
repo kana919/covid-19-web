@@ -62,14 +62,11 @@ export class App {
           let prefCellElement = document.querySelector(`#${info.name_en}`);
           prefCellElement.addEventListener("mouseover",
             {
-              info: info,
-              stats: this.prefStats,
-              graph: this.prefGraph,
               handleEvent: (ev) => {
                 // 概要情報の更新
-                this.stats.render(ev.info);
+                that.prefStats.render(info);
                 // 詳細グラフの更新
-                this.graph.update(ev.info.daily);
+                that.prefGraph.update(info.daily);
               }
             });
         }
