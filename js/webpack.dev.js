@@ -9,6 +9,6 @@ module.exports = merge(common, {
     port: 8001
   },
   optimization: {
-      minimize: false
+    minimize: false
   }
 });
