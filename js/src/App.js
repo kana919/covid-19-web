@@ -6,11 +6,18 @@ import { InfectionMap } from './components/InfectionMap.js'
 import { fetchFromAPI } from './apiUtil.js'
 
 
+const apiDomain = 'localhost:8000';
+const urlScheme = 'http://';
+
+// 本番環境用の設定
+if (process.env.NODE_ENV !== 'production') {
+  // 複雑化したら環境変数へ移行
+  const apiDomain = 'api.covid19jp.org'
+  const urlScheme = 'https://'
+}
+
 export class App {
   constructor() {
-    // TODO: 設定から変更できるように修正
-    this.apiDomain = 'http://localhost:8000/';
-
     // コンポーネントの初期化
     this.jpStats = new JapanStatsPanel();
     this.prefStats = new PrefStatsPanel();
@@ -25,7 +32,7 @@ export class App {
       /*
       // 日本の感染情報を取得/表示
       */
-      const japanInfectionInfo = fetchFromAPI(`${this.apiDomain}/stats/infection/japan`);
+      const japanInfectionInfo = fetchFromAPI(`${urlScheme}//${apiDomain}/stats/infection/japan`);
       japanInfectionInfo.then(infectionInfo => {
         // グラフを表示
         this.jpGraph.render(infectionInfo);
@@ -36,7 +43,7 @@ export class App {
       /*
       // 都道府県ごとの感染情報を取得/表示
       */
-      const prefInfectionInfo = fetchFromAPI(`${this.apiDomain}/stats/infection/prefectures`);
+      const prefInfectionInfo = fetchFromAPI(`${urlScheme}//${apiDomain}/stats/infection/prefectures`);
       prefInfectionInfo.then(infectionInfo => {
         // 東京都の感染情報の概要表示
         this.prefStats.render(infectionInfo[12]);
