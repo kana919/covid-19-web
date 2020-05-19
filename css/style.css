@@ -72,7 +72,7 @@ header .title{
 .nationwide-info .graph{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 520px;
     width: 500px;
     height: 280px;
     border-radius: 5%;
@@ -84,7 +84,7 @@ header .title{
 .nationwide-info .data{
     position: absolute;
     top: 0;
-    left: 520px;
+    left: 0;
     width: 500px;
     height: 280px;
     border-radius: 5%;
@@ -204,13 +204,13 @@ header .title{
 .data .total{
     font-size: 1.8rem;
     font-weight: bold;
-    margin:35px 0 0;
+    margin:30px 0 0 10px;
 }
 
 .data .current{
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 0 10px;
 }
 
 /* --------------------------------
@@ -269,9 +269,14 @@ header .title{
  .map-wrap .recovery.box,
  .map-wrap .stayhome.box,
  .map-wrap .dead.box{
-     margin-top: 80px;
+     margin-top: 10px;
  }
 
+.map-wrap .total{
+    margin-top: 32px;
+}
+ 
+ .map-wrap .current-num,
  .map-wrap .total-num{
      font-size: 1.5rem;
  }
@@ -292,6 +297,11 @@ header .title{
      line-height: 3.4rem;
  }
 
+ .map-wrap .button:hover{
+     border: 2px solid #4fd3f4;
+     opacity: 0.7;
+ }
+
 
 
  /* --------------------------------
@@ -301,30 +311,68 @@ header .title{
  .prefecture-table{
      margin: 10px 0 10px;
      font-size: 1.5rem;
- }
-
- .prefecture-table .table-area
- {
-     width: 850px;
+     width: 1020px;
      border-spacing: 0;
-     margin: 0;
-     border: 1px solid #000;
+     margin: 5px 0;
      border-collapse: collapse;
  }
 
- .table-area td,
- .table-area th
- {
-     width: 85px;
-     height: 30px;
-     font-weight: normal;
-     border: 1px solid #000;
+ .prefecture-table .table-section{
+     float: left;
+     width: 33%;
+     margin: 0;
  }
 
- .table-area th{
-     background-color: #b9e8ffff;
+.prefecture-table dl{
+    overflow: hidden;
+}
+
+ .table-section div{
+     display: flex;
+     margin-right: 3px;
+ }
+
+ .table-section dt,
+ .table-section dd{
+     width: 50%;
+     text-align: center;
+     margin: 0;
+     line-height: 2;
+ }
+
+ .table-section dd{
+     text-align: right;
+     font-weight: bold;
+ }
+
+ .table-section a{
+    text-decoration: none;
+    color: #000;
  }
  
+ .table-section div:nth-of-type(odd) dt,
+ .table-section div:nth-of-type(odd) dd{
+     background-color: #e4e4e4;;
+ }
+
+ .table-section:nth-of-type(1) div:nth-of-type(1) dd{
+    border-left: 1px solid #fff;
+    background-color: #b9e8ffff;
+    font-weight: normal;
+    text-align: center;
+ }
+
+ .table-section:nth-of-type(1) div:nth-of-type(1) dt{
+     background-color: #b9e8ffff;
+
+ }
+ /**
+ .table-section div:nth-of-type(even) dt,
+ .table-section div:nth-of-type(even) dd{
+     background-color: #e4e4e4;
+ }
+ */
+
 
   /* --------------------------------
  * detail
