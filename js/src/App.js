@@ -6,14 +6,16 @@ import { InfectionMap } from './components/InfectionMap.js'
 import { fetchFromAPI } from './apiUtil.js'
 
 
-const apiDomain = 'localhost:8000';
-const urlScheme = 'http://';
+let apiDomain = 'localhost:8000';
+let urlScheme = 'http://';
 
 // 本番環境用の設定
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   // 複雑化したら環境変数へ移行
-  const apiDomain = 'api.covid19jp.org'
-  const urlScheme = 'https://'
+  apiDomain = 'api.covid19jp.org';
+  urlScheme = 'https://';
+} else {
+  console.log('This page runs on development env!!!');
 }
 
 export class App {
