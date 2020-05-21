@@ -29,5 +29,10 @@ export class JapanStatsPanel {
     totalInfectionNumElement.innerHTML = infectionInfo[0].total_infected + '人';
     totalRecoveryNumElement.innerHTML = infectionInfo[0].total_recovered + '人';
     totalDeadNumElement.innerHTML = infectionInfo[0].total_death + '人';
+
+    // 現在
+    const currentInfectionNumElement = document.querySelector("#jp-current-infection-num");
+    currentInfectionNumElement.innerHTML = infectionInfo[0].current_infected + '人';
+    console.log(infectionInfo[0]);
   }
 }

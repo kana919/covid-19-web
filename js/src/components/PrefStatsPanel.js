@@ -6,11 +6,12 @@ export class PrefStatsPanel {
     const infectionNumElement = document.querySelector("#infection-num");
     const recoveryNumElement = document.querySelector("#recovery-num");
     const deadNumElement = document.querySelector("#dead-num");
-    const stayHomeRatioElement = document.querySelector("#stayhome-ratio");
 
     const totalInfectionNumElement = document.querySelector("#total-infection-num");
     const totalRecoveryNumElement = document.querySelector("#total-recovery-num");
     const totalDeadNumElement = document.querySelector("#total-dead-num");
+
+    const currentInfectionNumElement = document.querySelector("#current-infection-num");
 
     if (info.daily.length > 1) {
       // データが存在している場合は現在感染者数を表示
@@ -22,11 +23,7 @@ export class PrefStatsPanel {
       totalRecoveryNumElement.innerHTML = info.daily[0].total_recovered + '人';
       totalDeadNumElement.innerHTML = info.daily[0].total_death + '人';
 
-      if (info.daily[0].restraint_ratio) {
-        stayHomeRatioElement.innerHTML = parseInt(info.daily[0].restraint_ratio * 100) + '%'
-      } else {
-        stayHomeRatioElement.innerHTML = '- %';
-      }
+      currentInfectionNumElement.innerHTML = info.daily[0].current_infected + '人';
     } else {
       // データがない場合は不明
       infectionNumElement.innerHTML = '- 人';
@@ -37,7 +34,7 @@ export class PrefStatsPanel {
       totalRecoveryNumElement.innerHTML = '- 人';
       totalDeadNumElement.innerHTML = '- 人';
 
-      stayHomeRatioElement.innerHTML = '- %';
+      currentInfectionNumElement.innerHTML = '- 人';
     }
   }
 }
