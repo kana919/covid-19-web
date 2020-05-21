@@ -13,7 +13,6 @@
             </header>
             <section class="nationwide">
                 <div class="nationwide-info">
-                    <div class="graph"></div>
                     <div class="data">
                         <time id="date" class="date" datetime="2020-05-07">- 月 - 日 (-)</time>
                         <p class="title">全国の発生状況</p>
@@ -38,6 +37,7 @@
                         <p class="total">累計</p>
                         <p class="current">現在</p>
                     </div>
+                    <div id="graph" class="graph"></div>
                 </div>
             </section>
             <section class="map">
@@ -49,7 +49,10 @@
                             <p class="category">感染者数</p>
                             <p id="infection-num" class="num">- 人</p>
                             <p id="total-infection-num" class="total-num">- 人</p>
+                            <p id="current-infection-num" class="current-num">- 人</p>
                         </div>
+                        <p class="total">累計</p>
+                        <p class="current">現在</p>
                         <div class="map dead box">
                             <p class="category">死者数</p>
                             <p id="dead-num" class="num">- 人</p>
@@ -60,107 +63,223 @@
                             <p id="recovery-num" class="num">- 人</p>
                             <p id="total-recovery-num" class="total-num">- 人</p>
                         </div>
-                        <div class="map stayhome box">
-                            <p class="category">自粛率</p>
-                            <p id="stayhome-ratio" class="num">- %</p>
-                        </div>
-                        <a id="detail-button" class="button" href="#">詳細情報へ</a>
+                        <a id="detail-button" class="button" href="#graph">詳細情報へ</a>
                     </div>
                 </div>
             </section>
             <section class="prefecture">
                 <div class="prefecture-table">
-                    <table class="table-area">
-                        <tr>
-                            <th>都道府県名</th><th>感染者数</th>
-                            <td>富山県</td><td id="Toyama"></td>
-                            <td>鳥取県</td><td id="Tottori"></td>
-                        </tr>
-                        <tr>
-                            <td>北海道</td><td id="Hokkaido"></td>
-                            <td>石川県</td><td id="Ishikawa"></td>
-                            <td>岡山県</td><td id="Okayama"></td>
-                        </tr>
-                        <tr>
-                            <td>青森県</td><td id="Aomori"></td>
-                            <td>福井県</td><td id="Fukui"></td>
-                            <td>広島県</td><td id="Hiroshima"></td>
-                        </tr>
-                        <tr>
-                            <td>岩手県</td><td id="Iwate"></td>
-                            <td>山梨県</td><td id="Yamanashi"></td>
-                            <td>山口県</td><td id="Yamaguchi"></td>
-                        </tr>
-                        <tr>
-                            <td>宮城県</td><td id="Miyagi"></td>
-                            <td>長野県</td><td id="Nagano"></td>
-                            <td>徳島県</td><td id="Tokushima"></td>
-                        </tr>
-                        <tr>
-                            <td>秋田県</td><td id="Akita"></td>
-                            <td>岐阜県</td><td id="Gifu"></td>
-                            <td>香川県</td><td id="Kagawa"></td>
-                        </tr>
-                        <tr>
-                            <td>山形県</td><td id="Yamagata"></td>
-                            <td>静岡県</td><td id="Shizuoka"></td>
-                            <td>愛媛県</td><td id="Ehime"></td>
-                        </tr>
-                        <tr>
-                            <td>福島県</td><td id="Fukushima"></td>
-                            <td>愛知県</td><td id="Aichi"></td>
-                            <td>高知県</td><td id="Kochi"></td>
-                        </tr>
-                        <tr>
-                            <td>茨城県</td><td id="Ibaraki"></td>
-                            <td>三重県</td><td id="Mie"></td>
-                            <td>福岡県</td><td id="Fukuoka"></td>
-                        </tr>
-                        <tr>
-                            <td>栃木県</td><td id="Tochigi"></td>
-                            <td>滋賀県</td><td id="Shiga"></td>
-                            <td>佐賀県</td><td id="Saga"></td>
-                        </tr>
-                        <tr>
-                            <td>群馬県</td><td id="Gunma"></td>
-                            <td>京都県</td><td id="Kyoto"></td>
-                            <td>長崎県</td><td id="Nagasaki"></td>
-                        </tr>
-                        <tr>
-                            <td>埼玉県</td><td id="Saitama"></td>
-                            <td>大阪府</td><td id="Osaka"></td>
-                            <td>熊本県</td><td id="Kumamoto"></td>
-                        </tr>
-                        <tr>
-                            <td>千葉県</td><td id="Chiba"></td>
-                            <td>兵庫県</td><td id="Hyogo"></td>
-                            <td>大分県</td><td id="Oita"></td>
-                        </tr>
-                        <tr>
-                            <td>東京都</td><td id="Tokyo"></td>
-                            <td>奈良県</td><td id="Nara"></td>
-                            <td>宮崎県</td><td id="Miyazaki"></td>
-                        </tr>
-                        <tr>
-                            <td>神奈川県</td><td id="Kanagawa"></td>
-                            <td>和歌山県</td><td id="Wakayama"></td>
-                            <td>鹿児島県</td><td id="Kagoshima"></td>
-                        </tr>
-                        <tr>
-                            <td>新潟県</td><td id="Niigata"></td>
-                            <td>島根県</td><td id="Shimane"></td>
-                            <td>沖縄県</td><td id="Okinawa"></td>
-                        </tr>
-                    </table>
+                    <dl>
+                        <div class="table-section">
+                            <div style="background-color: #b9e8ffff;">
+                                <dt>都道府県名</dt>
+                                <dd>感染者数(人)</dd>
+                            </div>
+                            <div id="Hokkaido">
+                                <dt><a href="#">北海道</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Aomori">
+                                <dt><a href="#">青森県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Iwate">
+                                <dt><a href="#">岩手県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Miyagi">
+                                <dt><a href="#">宮城県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Akita">
+                                <dt><a href="#">秋田県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Yamagata">
+                                <dt><a href="#">山形県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Fukushima">
+                                <dt><a href="#">福島県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Tokyo">
+                                <dt><a href="#">東京都</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kanagawa">
+                                <dt><a href="#">神奈川県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Saitama">
+                                <dt><a href="#">埼玉県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Chiba">
+                                <dt><a href="#">千葉県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Ibaraki">
+                                <dt><a href="#">茨城県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Tochigi">
+                                <dt><a href="#">栃木県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Gunma">
+                                <dt><a href="#">群馬県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Yamanashi">
+                                <dt><a href="#">山梨県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                        </div>
+                        <div class="table-section">
+                            <div id="Niigata">
+                                <dt><a href="#">新潟県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Nagano">
+                                <dt><a href="#">長野県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Toyama">
+                                <dt><a href="#">富山県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Ishikawa">
+                                <dt><a href="#">石川県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Fukui">
+                                <dt><a href="#">福井県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Aichi">
+                                <dt><a href="#">愛知県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Gifu">
+                                <dt><a href="#">岐阜県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Shizuoka">
+                                <dt><a href="#">静岡県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Mie">
+                                <dt><a href="#">三重県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Osaka">
+                                <dt><a href="#">大阪府</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Hyogo">
+                                <dt><a href="#">兵庫県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kyoto">
+                                <dt><a href="#">京都府</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Shiga">
+                                <dt><a href="#">滋賀県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Nara">
+                                <dt><a href="#">奈良県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Wakayama">
+                                <dt><a href="#">和歌山県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Shimane">
+                                <dt><a href="#">島根県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                        </div>
+                        <div class="table-section">
+                            <div id="Tottori">
+                                <dt><a href="#">鳥取県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Okayama">
+                                <dt><a href="#">岡山県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Hiroshima">
+                                <dt><a href="#">広島県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Yamaguchi">
+                                <dt><a href="#">山口県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Tokushima">
+                                <dt><a href="#">徳島県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kagawa">
+                                <dt><a href="#">香川県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Ehime">
+                                <dt><a href="#">愛媛県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kochi">
+                                <dt><a href="#">高知県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Fukuoka">
+                                <dt><a href="#">福岡県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Saga">
+                                <dt><a href="#">佐賀県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Nagasaki">
+                                <dt><a href="#">長崎県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kumamoto">
+                                <dt><a href="#">熊本県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Oita">
+                                <dt><a href="#">大分県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Miyazaki">
+                                <dt><a href="#">宮崎県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Kagoshima">
+                                <dt><a href="#">鹿児島県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                            <div id="Okinawa">
+                                <dt><a href="#">沖縄県</a></dt>
+                                <dd id="num"></dd>
+                            </div>
+                        </div>
+                    </dl>
                 </div>
             </section>
             <section class="detail">
-                <div class="detail-graph"></div>
+                <div class="detail-graph" id="graph">
+                    <p class="graph-title">東京都 5月16日(木)</p>
+                </div>
             </section>
         </div>
         <script type="module" src="./main.js"></script>
     </body>
     <footer>
-        <div class="triangle b"></div>
+        <p class="copyright">Copyright©︎2020 Kana Kaita</p>
     </footer>
 </html>
