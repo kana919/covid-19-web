@@ -3,6 +3,7 @@ import { PrefStatsPanel } from './components/PrefStatsPanel.js'
 import { PrefStatsTable } from './components/PrefStatsTable.js'
 import { InfectionGraph } from './components/InfectionGraph.js'
 import { InfectionMap } from './components/InfectionMap.js'
+import { PrefIdHokkaido, PrefIdMiddle, PrefIdOkinawa } from "./components/JapanMap.js";
 import { fetchFromAPI } from './apiUtil.js'
 
 
@@ -26,7 +27,11 @@ export class App {
     this.jpGraph = new InfectionGraph("graph");
     this.prefGraph = new InfectionGraph("detail-graph");
     this.table = new PrefStatsTable();
-    this.map = new InfectionMap("map");
+    this.maps = [
+      new InfectionMap("map-hokkaido", false, PrefIdHokkaido),
+      new InfectionMap("map-middle", true, PrefIdMiddle),
+      new InfectionMap("map-okinawa", false, PrefIdOkinawa),
+    ];
   }
 
   mount() {
@@ -52,16 +57,19 @@ export class App {
 
         // 地図上のマウスオーバーのイベントリスナーの登録
         const that = this
-        this.map.addEventFunc((ev) => {
-          const prefId = ev.target.dataItem.dataContext.id;
-          const index = parseInt(prefId.split("JP-")[1]) - 1;
-          // 概要情報の更新
-          that.prefStats.render(infectionInfo[index]);
-          // 詳細グラフの更新
-          that.prefGraph.update(infectionInfo[index].daily);
+        this.maps.forEach(map => {
+          map.addEventFunc((ev) => {
+            const prefId = ev.target.dataItem.dataContext.id;
+            const index = parseInt(prefId.split("JP-")[1]) - 1;
+            // 概要情報の更新
+            that.prefStats.render(infectionInfo[index]);
+            // 詳細グラフの更新
+            that.prefGraph.update(infectionInfo[index].daily);
+          });
+          // 地図の表示
+          map.render();
         });
-        // 地図の表示
-        this.map.render();
+
 
 
         // 各都道府県の感染情報テーブル表示
