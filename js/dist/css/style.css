@@ -72,7 +72,7 @@ header .title{
 .nationwide-info .graph{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 520px;
     width: 500px;
     height: 280px;
     border-radius: 5%;
@@ -84,7 +84,7 @@ header .title{
 .nationwide-info .data{
     position: absolute;
     top: 0;
-    left: 520px;
+    left: 0;
     width: 500px;
     height: 280px;
     border-radius: 5%;
@@ -170,6 +170,7 @@ header .title{
     border-color: #ffd966;
 }
 
+
 .box .category{
     font-size: 2.0rem;
     text-align: center;
@@ -203,13 +204,13 @@ header .title{
 .data .total{
     font-size: 1.8rem;
     font-weight: bold;
-    margin:35px 0 0;
+    margin:30px 0 0 10px;
 }
 
 .data .current{
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 0 10px;
 }
 
 /* --------------------------------
@@ -238,7 +239,7 @@ header .title{
      position: absolute;
      right: 0;
      width: 270px;
-     height: 510px;
+     height: 480px;
      border: 1px solid #b9e8ff;
      border-radius: 2%;
      padding: 10px;
@@ -257,16 +258,25 @@ header .title{
     margin: 0;
  }
 
- .map-wrap .dead.box,
+ .map-wrap .infection.box{
+     margin: 0 25% 0;
+ }
+
  .map-wrap .stayhome.box{
      margin-left: 3px;
  }
 
  .map-wrap .recovery.box,
- .map-wrap .stayhome.box{
-     margin-top: 80px;
+ .map-wrap .stayhome.box,
+ .map-wrap .dead.box{
+     margin-top: 10px;
  }
 
+.map-wrap .total{
+    margin-top: 32px;
+}
+ 
+ .map-wrap .current-num,
  .map-wrap .total-num{
      font-size: 1.5rem;
  }
@@ -287,6 +297,11 @@ header .title{
      line-height: 3.4rem;
  }
 
+ .map-wrap .button:hover{
+     border: 2px solid #4fd3f4;
+     opacity: 0.7;
+ }
+
 
 
  /* --------------------------------
@@ -296,66 +311,94 @@ header .title{
  .prefecture-table{
      margin: 10px 0 10px;
      font-size: 1.5rem;
- }
-
- .prefecture-table .table-area
- {
-     width: 850px;
+     width: 1020px;
      border-spacing: 0;
-     margin: 0;
-     border: 1px solid #000;
+     margin: 5px 0;
      border-collapse: collapse;
  }
 
- .table-area td,
- .table-area th
- {
-     width: 85px;
-     height: 30px;
-     font-weight: normal;
-     border: 1px solid #000;
+ .prefecture-table .table-section{
+     float: left;
+     width: 33%;
+     margin: 0;
  }
 
- .table-area th{
-     background-color: #b9e8ffff;
+.prefecture-table dl{
+    overflow: hidden;
+}
+
+ .table-section div{
+     display: flex;
+     margin-right: 3px;
+ }
+
+ .table-section dt,
+ .table-section dd{
+     width: 50%;
+     text-align: center;
+     margin: 0;
+     line-height: 2;
+ }
+
+ .table-section dd{
+     text-align: right;
+     font-weight: bold;
+ }
+
+ .table-section a{
+    text-decoration: none;
+    color: #000;
  }
  
+ .table-section div:nth-of-type(odd) dt,
+ .table-section div:nth-of-type(odd) dd{
+     background-color: #e4e4e4;;
+ }
+
+ .table-section:nth-of-type(1) div:nth-of-type(1) dd{
+    border-left: 1px solid #fff;
+    background-color: #b9e8ffff;
+    font-weight: normal;
+    text-align: center;
+ }
+
+ .table-section:nth-of-type(1) div:nth-of-type(1) dt{
+     background-color: #b9e8ffff;
+
+ }
 
   /* --------------------------------
  * detail
  * -------------------------------- */
 
  .detail-graph{
-     margin: 10px 0 10px;
+     margin: 5px 0 10px;
      width: 1020px;
      height: 600px;
      border: 1px solid #8fd3f4;
      border-radius: 2%;
  }
 
+ .graph-title{
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-left: 20px;
+ }
+
    /* --------------------------------
  * footer
  * -------------------------------- */
-/*
-.triangle.b{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 1036px;
-    height: 500px;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    z-index: -2;
-}
 
-.triangle.b::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    border: 518px solid transparent;
-    border-bottom-width: 250px;
-    border-top-width: 250px;
-    border-top-color: #fff;
-    border-left-color: #fff;
-    z-index: 1;
-}
-*/
+ footer{
+     width: 100%;
+     height: 100px;
+     background-color: #e4e4e4;
+     margin-top: 10px;
+ }
+
+ footer .copyright{
+     text-align: center;
+     color: #000;
+     margin: 0;
+     line-height: 8;
+ }
