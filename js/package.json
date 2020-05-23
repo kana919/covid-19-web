@@ -6,6 +6,7 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.9.21",
     "@amcharts/amcharts4-geodata": "^4.1.15",
+    "lodash": "^4.17.15",
     "moment": "^2.25.3"
   },
   "devDependencies": {

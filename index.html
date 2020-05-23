@@ -42,7 +42,17 @@
             </section>
             <section class="map">
                 <div class="map-wrap">
-                    <div id="map" class="map chart"></div>
+                    <div id="map" class="map chart">
+                      <div id="map-hokkaido" class="hokkaido"></div>
+                      <svg class="map-line-hokkaido" width="320" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                        <polyline stroke="#595757" stroke-width="0.5" points="0 308.2 110.9 308.2 406.4 130.5 406.4 1" fill="#fff"></polyline>
+                      </svg>
+                      <div id="map-middle" class="middle"></div>
+                      <div id="map-okinawa" class="okinawa"></div>
+                      <svg class="map-line-okinawa" width="350" height="320" viewBox="0 350 320" xmlns="http://www.w3.org/2000/svg">
+                        <polyline stroke="#595757" stroke-width="0.5" points="0 300 0 200 250 50 350 50" fill="#fff"></polyline>
+                      </svg>
+                    </div>
                     <div class="data">
                         <p id="prefecture-name" class="prefecture-name"></p>
                         <div class="map infection box">

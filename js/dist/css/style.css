@@ -226,13 +226,39 @@ header .title{
     background-color: #fff;
  }
 
- .map-wrap .chart {
+ .map-wrap .chart{
      position: absolute;
-     left: 20px;
-     top: 20px;
+     left: 0px;
+     top: 0px;
      width: 730px;
      height: 580px;
      padding: 10px;
+ }
+
+ .map-wrap .chart .hokkaido{
+     position: absolute;
+     left: 40px;
+     top: 20px;
+     width: 230px;
+     height: 230px;
+     z-index: 1;
+ }
+
+ .map-wrap .chart .middle{
+     position: absolute;
+     left: 30px;
+     top: 40px;
+     width: 630px;
+     height: 500px;
+ }
+
+ .map-wrap .chart .okinawa{
+     position: absolute;
+     right: 20px;
+     bottom: 20px;
+     width: 280px;
+     height: 230px;
+     z-index: 1;
  }
 
  .map-wrap .data{
