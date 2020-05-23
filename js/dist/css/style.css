@@ -241,7 +241,7 @@ header .title{
      top: 20px;
      width: 230px;
      height: 230px;
-     z-index: 1;
+     z-index: 2;
  }
 
  .map-wrap .chart .middle{
@@ -250,6 +250,7 @@ header .title{
      top: 40px;
      width: 630px;
      height: 500px;
+     z-index: 1;
  }
 
  .map-wrap .chart .okinawa{
@@ -258,7 +259,19 @@ header .title{
      bottom: 20px;
      width: 280px;
      height: 230px;
-     z-index: 1;
+     z-index: 2;
+ }
+
+ .map-wrap .chart .map-line-hokkaido{
+   position: absolute;
+   left: 30px;
+   top: 0px;
+ }
+
+ .map-wrap .chart .map-line-okinawa{
+   position: absolute;
+   right: 0px;
+   bottom: 0px;
  }
 
  .map-wrap .data{
