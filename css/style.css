@@ -261,6 +261,18 @@ header .title{
      z-index: 1;
  }
 
+ .map-wrap .chart .map-line-hokkaido{
+   position: absolute;
+   left: 30px;
+   top: 0px;
+ }
+
+ .map-wrap .chart .map-line-okinawa{
+   position: absolute;
+   right: 0px;
+   bottom: 0px;
+ }
+
  .map-wrap .data{
      position: absolute;
      right: 0;
