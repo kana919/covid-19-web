@@ -77,6 +77,9 @@ export class App {
         for (let info of infectionInfo) {
           // 各都道府県のセルにイベントリスナーの登録
           let prefCellElement = document.querySelector(`#${info.name_en}`);
+          if (prefCellElement === null) {
+            continue;
+          }
           prefCellElement.addEventListener("mouseover",
             {
               handleEvent: (ev) => {

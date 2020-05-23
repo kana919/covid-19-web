@@ -24,7 +24,7 @@ export class InfectionGraph {
     dateAxis.baseInterval = {
       timeUnit: "day",
       count: 1
-    }
+    };
     dateAxis.dateFormatter = new am4core.DateFormatter();
     dateAxis.dateFormats.setKey("day", "MM/dd");
     let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
