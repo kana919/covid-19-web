@@ -37,12 +37,22 @@
                         <p class="total">累計</p>
                         <p class="current">現在</p>
                     </div>
-                    <div class="graph"></div>
+                    <div id="graph" class="graph"></div>
                 </div>
             </section>
             <section class="map">
                 <div class="map-wrap">
-                    <div id="map" class="map chart"></div>
+                    <div id="map" class="map chart">
+                      <div id="map-hokkaido" class="hokkaido"></div>
+                      <svg class="map-line-hokkaido" width="320" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                        <polyline stroke="#595757" stroke-width="0.5" points="0 308.2 110.9 308.2 406.4 130.5 406.4 1" fill="#fff"></polyline>
+                      </svg>
+                      <div id="map-middle" class="middle"></div>
+                      <div id="map-okinawa" class="okinawa"></div>
+                      <svg class="map-line-okinawa" width="350" height="320" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg">
+                        <polyline stroke="#595757" stroke-width="0.5" points="0 300 0 200 250 50 350 50" fill="#fff"></polyline>
+                      </svg>
+                    </div>
                     <div class="data">
                         <p id="prefecture-name" class="prefecture-name"></p>
                         <div class="map infection box">
@@ -63,7 +73,7 @@
                             <p id="recovery-num" class="num">- 人</p>
                             <p id="total-recovery-num" class="total-num">- 人</p>
                         </div>
-                        <a id="detail-button" class="button" href="#graph">詳細情報へ</a>
+                        <a id="detail-button" class="button" href="#detail-graph">詳細情報へ</a>
                     </div>
                 </div>
             </section>
@@ -75,205 +85,206 @@
                                 <dt>都道府県名</dt>
                                 <dd>現在感染者数(人)</dd>
                             </div>
-                            <div class>
+                            <div id="Hokkaido">
                                 <dt><a href="#">北海道</a></dt>
-                                <dd id="Hokkaido">333</dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Aomori">
                                 <dt><a href="#">青森県</a></dt>
-                                <dd id="Aomori"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Iwate">
                                 <dt><a href="#">岩手県</a></dt>
-                                <dd id="Iwate"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Miyagi">
                                 <dt><a href="#">宮城県</a></dt>
-                                <dd id="Miyagi"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Akita">
                                 <dt><a href="#">秋田県</a></dt>
-                                <dd id="Akita"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Yamagata">
                                 <dt><a href="#">山形県</a></dt>
-                                <dd id="Yamagata"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Fukushima">
                                 <dt><a href="#">福島県</a></dt>
-                                <dd id="Fukushima"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Tokyo">
                                 <dt><a href="#">東京都</a></dt>
-                                <dd id="Tokyo"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kanagawa">
                                 <dt><a href="#">神奈川県</a></dt>
-                                <dd id="Kanagawa"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Saitama">
                                 <dt><a href="#">埼玉県</a></dt>
-                                <dd id="Saitama"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Chiba">
                                 <dt><a href="#">千葉県</a></dt>
-                                <dd id="Chiba"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Ibaraki">
                                 <dt><a href="#">茨城県</a></dt>
-                                <dd id="Ibaraki"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Tochigi">
                                 <dt><a href="#">栃木県</a></dt>
-                                <dd id="Tochigi"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Gunma">
                                 <dt><a href="#">群馬県</a></dt>
-                                <dd id="Gunma"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Yamanashi">
                                 <dt><a href="#">山梨県</a></dt>
-                                <dd id="Yamanashi"></dd>
+                                <dd id="num"></dd>
                             </div>
                         </div>
                         <div class="table-section">
-                            <div class>
+                            <div id="Niigata">
                                 <dt><a href="#">新潟県</a></dt>
-                                <dd id="Niigata"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Nagano">
                                 <dt><a href="#">長野県</a></dt>
-                                <dd id="Nagano"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Toyama">
                                 <dt><a href="#">富山県</a></dt>
-                                <dd id="Toyama"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Ishikawa">
                                 <dt><a href="#">石川県</a></dt>
-                                <dd id="Ishikawa"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Fukui">
                                 <dt><a href="#">福井県</a></dt>
-                                <dd id="Fukui"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Aichi">
                                 <dt><a href="#">愛知県</a></dt>
-                                <dd id="Aichi"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Gifu">
                                 <dt><a href="#">岐阜県</a></dt>
-                                <dd id="Gifu"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Shizuoka">
                                 <dt><a href="#">静岡県</a></dt>
-                                <dd id="Shizuoka"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Mie">
                                 <dt><a href="#">三重県</a></dt>
-                                <dd id="Mie"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Osaka">
                                 <dt><a href="#">大阪府</a></dt>
-                                <dd id="Osaka"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Hyogo">
                                 <dt><a href="#">兵庫県</a></dt>
-                                <dd id="Hyogo"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kyoto">
                                 <dt><a href="#">京都府</a></dt>
-                                <dd id="Kyoto"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Shiga">
                                 <dt><a href="#">滋賀県</a></dt>
-                                <dd id="Shiga"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Nara">
                                 <dt><a href="#">奈良県</a></dt>
-                                <dd id="Nara"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Wakayama">
                                 <dt><a href="#">和歌山県</a></dt>
-                                <dd id="Wakayama"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Shimane">
                                 <dt><a href="#">島根県</a></dt>
-                                <dd id="Shimane"></dd>
+                                <dd id="num"></dd>
                             </div>
                         </div>
                         <div class="table-section">
-                            <div class>
+                            <div id="Tottori">
                                 <dt><a href="#">鳥取県</a></dt>
-                                <dd id="Tottori"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Okayama">
                                 <dt><a href="#">岡山県</a></dt>
-                                <dd id="Okayama"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Hiroshima">
                                 <dt><a href="#">広島県</a></dt>
-                                <dd id="Hiroshima"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Yamaguchi">
                                 <dt><a href="#">山口県</a></dt>
-                                <dd id="Yamaguchi"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Tokushima">
                                 <dt><a href="#">徳島県</a></dt>
-                                <dd id="Tokushima"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kagawa">
                                 <dt><a href="#">香川県</a></dt>
-                                <dd id="Kagawa"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Ehime">
                                 <dt><a href="#">愛媛県</a></dt>
-                                <dd id="Ehime"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kochi">
                                 <dt><a href="#">高知県</a></dt>
-                                <dd id="Kochi"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Fukuoka">
                                 <dt><a href="#">福岡県</a></dt>
-                                <dd id="Fukuoka"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Saga">
                                 <dt><a href="#">佐賀県</a></dt>
-                                <dd id="Saga"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Nagasaki">
                                 <dt><a href="#">長崎県</a></dt>
-                                <dd id="Nagasaki"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kumamoto">
                                 <dt><a href="#">熊本県</a></dt>
-                                <dd id="Kumamoto"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Oita">
                                 <dt><a href="#">大分県</a></dt>
-                                <dd id="Oita"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Miyazaki">
                                 <dt><a href="#">宮崎県</a></dt>
-                                <dd id="Miyazaki"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Kagoshima">
                                 <dt><a href="#">鹿児島県</a></dt>
-                                <dd id="Kagoshima"></dd>
+                                <dd id="num"></dd>
                             </div>
-                            <div class>
+                            <div id="Okinawa">
                                 <dt><a href="#">沖縄県</a></dt>
-                                <dd id="Okinawa"></dd>
+                                <dd id="num"></dd>
                             </div>
                         </div>
                     </dl>
                 </div>
             </section>
             <section class="detail">
-                <div class="detail-graph" id="graph">
-                    <p class="graph-title">東京都 5月16日(木)</p>
+                <div class="graph">
+                  <p id="detail-graph-title" class="title">東京都の日別発生状況</p>
+                  <div id="detail-graph" class="chart"></div>
                 </div>
             </section>
         </div>

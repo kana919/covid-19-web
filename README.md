@@ -1,6 +1,7 @@
 # covid-19-web
 
-covid-19 web site
+A covid-19 web site for Japan.
+[Demo Site](http://www.covid19jp.org) is currently under developing.
 
 ## Setup
 
@@ -24,7 +25,7 @@ Then, web server is started on 8001 port.
 
 ***This site is assumed to connect to [covid-19-api](https://github.com/satoshi03/covid-19-api). So, start the API server at first.***
 
-## Build
+## Build and deploy
 
 If you want to build js files, run following command.
 
@@ -34,3 +35,9 @@ $ npm run build
 ```
 
 Then, source codes are built and outputted to `dist` directory.
+
+Deploy `dist` files to Google Storage via `gsutil`.
+
+```
+$ gsutil rsync -R dist/ gs://www.covid19jp.org
+```

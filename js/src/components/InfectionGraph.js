@@ -24,7 +24,7 @@ export class InfectionGraph {
     dateAxis.baseInterval = {
       timeUnit: "day",
       count: 1
-    }
+    };
     dateAxis.dateFormatter = new am4core.DateFormatter();
     dateAxis.dateFormats.setKey("day", "MM/dd");
     let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
@@ -67,7 +67,7 @@ export class InfectionGraph {
 
     let infection = this.chart.series.push(new am4charts.LineSeries());
     infection.dataFields.dateX = "reported_date";
-    infection.name = "感染者数";
+    infection.name = "現在感染者数";
     infection.dataFields.valueY = "current_infected";
     infection.tooltipHTML = "<span style='font-size:14px; color:#000000;'>感染者数:<b>{valueY.value}</b></span>";
     infection.tooltipText = "[#000]{valueY.value}[/]";

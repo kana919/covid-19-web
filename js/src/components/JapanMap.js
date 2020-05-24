@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import am4geodata_japanLow from "@amcharts/amcharts4-geodata/japanLow";
 
 const prefNameMap = {
@@ -50,19 +52,75 @@ const prefNameMap = {
   "Yamanashi": "山梨県"
 }
 
-export default class JapanMap {
+export const PrefIdHokkaido = ["JP-01"]
+export const PrefIdOkinawa = ["JP-47"]
+export const PrefIdMiddle = [
+  "JP-02",
+  "JP-03",
+  "JP-04",
+  "JP-05",
+  "JP-06",
+  "JP-07",
+  "JP-08",
+  "JP-09",
+  "JP-10",
+  "JP-11",
+  "JP-12",
+  "JP-13",
+  "JP-14",
+  "JP-15",
+  "JP-16",
+  "JP-17",
+  "JP-18",
+  "JP-19",
+  "JP-20",
+  "JP-21",
+  "JP-22",
+  "JP-23",
+  "JP-24",
+  "JP-25",
+  "JP-26",
+  "JP-27",
+  "JP-28",
+  "JP-29",
+  "JP-30",
+  "JP-31",
+  "JP-32",
+  "JP-33",
+  "JP-34",
+  "JP-35",
+  "JP-36",
+  "JP-37",
+  "JP-38",
+  "JP-39",
+  "JP-40",
+  "JP-41",
+  "JP-42",
+  "JP-43",
+  "JP-44",
+  "JP-45",
+  "JP-46",
+]
+
+export class JapanMap {
   constructor() {
-    this.geoData = am4geodata_japanLow;
+    this.geoData = _.cloneDeep(am4geodata_japanLow);
     this._localizeName();
   }
 
   _localizeName() {
     for (const feature of this.geoData.features) {
       feature.properties.name = prefNameMap[feature.properties.name];
+      console.log(feature.properties.name);
     }
   }
 
-  getGeoData() {
+  getGeoData(prefIds = []) {
+    if (prefIds.length > 0) {
+      this.geoData.features = this.geoData.features.filter(feature => {
+        return prefIds.includes(feature.id);
+      });
+    }
     return this.geoData;
   }
 }
