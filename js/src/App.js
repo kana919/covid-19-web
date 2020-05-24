@@ -65,6 +65,8 @@ export class App {
             that.prefStats.render(infectionInfo[index]);
             // 詳細グラフの更新
             that.prefGraph.update(infectionInfo[index].daily);
+            let prefGrapTitle = document.querySelector(`detail-graph-title`);
+            prefGraphTitle.innerHTML = `${info.name}の日別発生状況`;
           });
           // 地図の表示
           map.render();
@@ -87,6 +89,8 @@ export class App {
                 that.prefStats.render(info);
                 // 詳細グラフの更新
                 that.prefGraph.update(info.daily);
+                let prefGraphTitle = document.querySelector('#detail-graph-title');
+                prefGraphTitle.innerHTML = `${info.name}の日別発生状況`;
               }
             });
         }

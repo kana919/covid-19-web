@@ -410,18 +410,27 @@ header .title{
  * detail
  * -------------------------------- */
 
- .detail-graph{
+.detail {
      margin: 5px 0 10px;
      width: 1020px;
      height: 600px;
      border: 1px solid #8fd3f4;
      border-radius: 2%;
+}
+
+ .detail .graph{
+     margin: 5px 0 10px;
  }
 
- .graph-title{
+ .detail .graph .title{
     font-weight: bold;
-    font-size: 2.5rem;
-    margin-left: 20px;
+    font-size: 2.0rem;
+    margin-left: 25px;
+ }
+
+ .detail .graph .chart {
+   height: 500px;
+   margin: 10px;
  }
 
    /* --------------------------------
