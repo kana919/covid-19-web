@@ -44,9 +44,9 @@ $ gsutil rsync -R dist/ gs://www.covid19jp.org
 
 ## Development tips
 
-### CSS Format
+### css format
 
-CSS formatter is installed to manage css file easier.
+In order to manage css file easier, css formatter has been installed.
 If you want to format `css/style.css`, run following command.
 
 ```
