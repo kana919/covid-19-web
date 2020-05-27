@@ -83,6 +83,8 @@ export class InfectionGraph {
 
     this.chart.cursor = new am4charts.XYCursor();
     this.chart.cursor.xAxis = dateAxis;
+    this.chart.cursor.behavior = "none";
+
     // Add a legend
     this.chart.legend = new am4charts.Legend();
     this.chart.legend.position = "top";
