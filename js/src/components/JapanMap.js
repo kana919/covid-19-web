@@ -111,7 +111,6 @@ export class JapanMap {
   _localizeName() {
     for (const feature of this.geoData.features) {
       feature.properties.name = prefNameMap[feature.properties.name];
-      console.log(feature.properties.name);
     }
   }
 

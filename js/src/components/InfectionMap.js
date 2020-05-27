@@ -16,7 +16,7 @@ export class InfectionMap {
     }
   }
 
-  render() {
+  render(infectionInfo) {
     // Set projection
     this.chart.projection = new am4maps.projections.Miller();
     // this.chart.panBehavior = "rotateLongLat";
@@ -34,12 +34,37 @@ export class InfectionMap {
 
     // Configure series
     let polygonTemplate = polygonSeries.mapPolygons.template;
-    polygonTemplate.tooltipText = "{name}";
     polygonTemplate.fill = this.chart.colors.getIndex(0);
+    polygonTemplate.adapter.add("fill", function(fill, target) {
+      if (target.dataItem.dataContext) {
+        const index = parseInt(target.dataItem.dataContext.id.split("JP-")[1]) - 1;
+        const num = infectionInfo[index].daily[0].new_infected;
+        if (num > 1000) {
+          return am4core.color("#8c0a00");
+        }
+        if (num > 500) {
+          return am4core.color("#bf2a11");
+        }
+        if (num > 100) {
+          return am4core.color("#ea5432");
+        }
+        if (num > 50) {
+          return am4core.color("#ff771d");
+        }
+        if (num > 10) {
+          return am4core.color("#ff9d56");
+        }
+        if (num > 1) {
+          return am4core.color("#ffceab");
+        }
+        return am4core.color("#eaeaea");
+      }
+    });
+    polygonTemplate.tooltipText = "{name}";
 
     // Create hover state and set alternative fill color
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = this.chart.colors.getIndex(0).brighten(-0.5);
+    // hs.properties.fill = this.chart.colors.getIndex(0).brighten(-0.5);
     polygonTemplate.events.on("over", this.eventFunc);
   }
 

@@ -69,7 +69,7 @@ export class App {
             prefGraphTitle.innerHTML = `${infectionInfo[index].name}の日別発生状況`;
           });
           // 地図の表示
-          map.render();
+          map.render(infectionInfo);
         });
 
         // 各都道府県の感染情報テーブル表示
