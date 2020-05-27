@@ -3,462 +3,462 @@
 /* --------------------------------
  * base
  * -------------------------------- */
-html{
-    font-size: 62.5%;
+
+html {
+  font-size: 62.5%;
 }
 
-body{
-    position: relative;
-    margin: 0;
-    font-size: 1.2rem;
-    font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
+body {
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  margin: 0;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
 }
 
-.triangle.a{
-    position: absolute;
-    top: -27px;
-    width: 1036px;
-    height: 500px;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    z-index: -2;
+.triangle.a {
+  position: absolute;
+  top: -27px;
+  width: 1036px;
+  height: 500px;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  z-index: -2;
 }
 
-.triangle.a::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    border: 518px solid transparent;
-    border-bottom-width: 250px;
-    border-top-width: 250px;
-    border-bottom-color: #fff;
-    border-right-color: #fff;
-    z-index: 1;
+.triangle.a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border: 518px solid transparent;
+  border-bottom-width: 250px;
+  border-top-width: 250px;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  z-index: 1;
 }
 
-
-body .wrapper{
-    margin: 10px 10% 0;
+body .wrapper {
+  margin: 10px 10% 0;
 }
 
-*,*::before,*::after{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* --------------------------------
  * header
  * -------------------------------- */
 
-header{
-    width: 100%;
-    margin: 10px 0 20px;
+header {
+  width: 100%;
+  margin: 10px 0 20px;
 }
 
-header .title{
-    font-size: 4.0rem;
-    font-weight: normal;
+header .title {
+  font-size: 4.0rem;
+  font-weight: normal;
 }
 
 /* --------------------------------
  * nationwide
  * -------------------------------- */
 
-.nationwide-info{
-    position: relative;
-    margin-top: 40px;
-    width: 1120px;
-    height: 300px;
-    font-size: 1.2rem;
+.nationwide-info {
+  position: relative;
+  margin-top: 40px;
+  width: 1120px;
+  height: 300px;
+  font-size: 1.2rem;
 }
 
-.nationwide-info .graph{
-    position: absolute;
-    top: 0;
-    left: 520px;
-    width: 500px;
-    height: 280px;
-    border-radius: 5%;
-    border: 1px solid #b9e8ff;
-    background-color: #fff;
-    padding: 10px;
+.nationwide-info .graph {
+  position: absolute;
+  top: 0;
+  left: 520px;
+  width: 500px;
+  height: 280px;
+  border-radius: 5%;
+  border: 1px solid #b9e8ff;
+  background-color: #fff;
+  padding: 10px;
 }
 
-.nationwide-info .data{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 500px;
-    height: 280px;
-    border-radius: 5%;
-    border: 1px solid #b9e8ff;
-    font-size: 1.5rem;
-    padding: 10px;
-    background-color: #fff;
+.nationwide-info .data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 280px;
+  border-radius: 5%;
+  border: 1px solid #b9e8ff;
+  font-size: 1.5rem;
+  padding: 10px;
+  background-color: #fff;
 }
 
-.data .date{
-    font-weight: bold;
-    font-size: 2.0rem;
+.data .date {
+  font-weight: bold;
+  font-size: 2.0rem;
 }
 
-.data .title{
-    display: inline;
-    font-weight: bold;
-    font-size: 2.0rem;
+.data .title {
+  display: inline;
+  font-weight: bold;
+  font-size: 2.0rem;
 }
 
-.data .box-wrapper{
-    margin: 20px 0 10px 70px;
+.data .box-wrapper {
+  margin: 20px 0 10px 70px;
 }
 
-.data .box{
-    position: relative;
-    display:  inline-block;
-    border: 3px solid #e06666;
-    border-radius: 10%;
-    width: 120px;
-    height: 120px;
-    margin-right: 10px;
+.data .box {
+  position: relative;
+  display: inline-block;
+  border: 3px solid #e06666;
+  border-radius: 10%;
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
 }
 
 .infection.box::before,
 .dead.box::before,
-.recovery.box::before{
-    content: "";
-    position: absolute;
-    bottom: -39px;
-    left: 37%;
-    border: 19px solid transparent;
-    border-top: 20px solid #fff;
-    z-index: 1;
+.recovery.box::before {
+  content: "";
+  position: absolute;
+  bottom: -39px;
+  left: 37%;
+  border: 19px solid transparent;
+  border-top: 20px solid #fff;
+  z-index: 1;
 }
 
-.infection.box::after{
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 32%;
-    border: 25px solid transparent;
-    border-top: 25px solid #e06666;
+.infection.box::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 32%;
+  border: 25px solid transparent;
+  border-top: 25px solid #e06666;
 }
 
-.box.recovery{
-    border-color: #93c47d;
+.box.recovery {
+  border-color: #93c47d;
 }
 
-.recovery.box::after{
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 32%;
-    border: 25px solid transparent;
-    border-top: 25px solid #93c47d;
+.recovery.box::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 32%;
+  border: 25px solid transparent;
+  border-top: 25px solid #93c47d;
 }
 
-.dead.box{
-    border-color: #999999;
+.dead.box {
+  border-color: #999999;
 }
 
-.dead.box::after{
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 32%;
-    border: 25px solid transparent;
-    border-top: 25px solid #999999;
+.dead.box::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 32%;
+  border: 25px solid transparent;
+  border-top: 25px solid #999999;
 }
 
-.box.stayhome{
-    border-color: #ffd966;
+.box.stayhome {
+  border-color: #ffd966;
 }
 
-
-.box .category{
-    font-size: 2.0rem;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 0;
+.box .category {
+  font-size: 2.0rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0;
 }
 
-.box .num{
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.0rem;
-    margin: 0;
+.box .num {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.0rem;
+  margin: 0;
 }
 
-.data .total-num{
-    position: absolute;
-    bottom: -75px;
-    width: 120px;
-    font-weight: bold;
-    text-align: center;
+.data .total-num {
+  position: absolute;
+  bottom: -75px;
+  width: 120px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.data .current-num{
-    position: absolute;
-    bottom: -105px;
-    width: 120px;
-    font-weight: bold;
-    text-align: center;
+.data .current-num {
+  position: absolute;
+  bottom: -105px;
+  width: 120px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.data .total{
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin:30px 0 0 10px;
+.data .total {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 30px 0 0 10px;
 }
 
-.data .current{
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0 0 0 10px;
+.data .current {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 0 10px;
 }
 
 /* --------------------------------
  * map
  * -------------------------------- */
 
- .map-wrap{
-    position: relative;
-    width: 1020px;
-    height: 600px;
-    border: 1px solid #b9e8ff;
-    border-radius: 2%;
-    background-color: #fff;
- }
-
- .map-wrap .chart{
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     width: 730px;
-     height: 580px;
-     padding: 10px;
- }
-
- .map-wrap .chart .hokkaido{
-     position: absolute;
-     left: 40px;
-     top: 20px;
-     width: 230px;
-     height: 230px;
-     z-index: 2;
- }
-
- .map-wrap .chart .middle{
-     position: absolute;
-     left: 30px;
-     top: 40px;
-     width: 630px;
-     height: 500px;
-     z-index: 1;
- }
-
- .map-wrap .chart .okinawa{
-     position: absolute;
-     right: 20px;
-     bottom: 20px;
-     width: 280px;
-     height: 230px;
-     z-index: 2;
- }
-
- .map-wrap .chart .map-line-hokkaido{
-   position: absolute;
-   left: 30px;
-   top: 0px;
- }
-
- .map-wrap .chart .map-line-okinawa{
-   position: absolute;
-   right: 0px;
-   bottom: 0px;
- }
-
- .map-wrap .data{
-     position: absolute;
-     right: 0;
-     width: 270px;
-     height: 510px;
-     border: 1px solid #b9e8ff;
-     border-radius: 2%;
-     padding: 10px;
-     background-color: #fff;
- }
-
- .map-wrap .prefecture-name{
-     display: block;
-     height: 30px;
-     font-weight: bold;
-     font-size: 2.4rem;
-     text-align: center;
-     margin: 5px 0;
- }
-
- .map-wrap .data .box{
-    margin: 0;
- }
-
- .map-wrap .infection.box{
-     margin: 0 25% 0;
- }
-
- .map-wrap .stayhome.box{
-     margin-left: 3px;
- }
-
- .map-wrap .recovery.box,
- .map-wrap .stayhome.box,
- .map-wrap .dead.box{
-     margin-top: 10px;
- }
-
-.map-wrap .total{
-    margin-top: 32px;
+.map-wrap {
+  position: relative;
+  width: 1020px;
+  height: 600px;
+  border: 1px solid #b9e8ff;
+  border-radius: 2%;
+  background-color: #fff;
 }
- 
- .map-wrap .current-num,
- .map-wrap .total-num{
-     font-size: 1.5rem;
- }
 
- .map-wrap .button{
-     position: absolute;
-     bottom: 10px;
-     left: 35px;
-     width: 200px;
-     height: 40px;
-     border: 1px solid #8fd3f4;
-     border-radius: 15px;
-     color: #000;
-     background-color: #b9e8ffff;
-     text-decoration: none;
-     text-align: center;
-     font-size: 1.7rem;
-     line-height: 3.4rem;
- }
+.map-wrap .chart {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 730px;
+  height: 580px;
+  padding: 10px;
+}
 
- .map-wrap .button:hover{
-     border: 2px solid #4fd3f4;
-     opacity: 0.7;
- }
+.map-wrap .chart .hokkaido {
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  width: 230px;
+  height: 230px;
+  z-index: 2;
+}
 
+.map-wrap .chart .middle {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  width: 630px;
+  height: 500px;
+  z-index: 1;
+}
 
+.map-wrap .chart .okinawa {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 280px;
+  height: 230px;
+  z-index: 2;
+}
 
- /* --------------------------------
+.map-wrap .chart .map-line-hokkaido {
+  position: absolute;
+  left: 30px;
+  top: 0px;
+}
+
+.map-wrap .chart .map-line-okinawa {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.map-wrap .data {
+  position: absolute;
+  right: 0;
+  width: 270px;
+  height: 510px;
+  border: 1px solid #b9e8ff;
+  border-radius: 2%;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.map-wrap .prefecture-name {
+  display: block;
+  height: 30px;
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.map-wrap .data .box {
+  margin: 0;
+}
+
+.map-wrap .infection.box {
+  margin: 0 25% 0;
+}
+
+.map-wrap .stayhome.box {
+  margin-left: 3px;
+}
+
+.map-wrap .recovery.box,
+.map-wrap .stayhome.box,
+.map-wrap .dead.box {
+  margin-top: 10px;
+}
+
+.map-wrap .total {
+  margin-top: 32px;
+}
+
+.map-wrap .current-num,
+.map-wrap .total-num {
+  font-size: 1.5rem;
+}
+
+.map-wrap .button {
+  position: absolute;
+  bottom: 10px;
+  left: 35px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid #8fd3f4;
+  border-radius: 15px;
+  color: #000;
+  background-color: #b9e8ffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 3.4rem;
+}
+
+.map-wrap .button:hover {
+  border: 2px solid #4fd3f4;
+  opacity: 0.7;
+}
+
+/* --------------------------------
  * prefecture
  * -------------------------------- */
 
- .prefecture-table{
-     margin: 10px 0 10px;
-     font-size: 1.5rem;
-     width: 1020px;
-     border-spacing: 0;
-     margin: 5px 0;
-     border-collapse: collapse;
- }
-
- .prefecture-table .table-section{
-     float: left;
-     width: 33%;
-     margin: 0;
- }
-
-.prefecture-table dl{
-    overflow: hidden;
+.prefecture-table {
+  margin: 10px 0 10px;
+  font-size: 1.5rem;
+  width: 1020px;
+  border-spacing: 0;
+  margin: 5px 0;
+  border-collapse: collapse;
 }
 
- .table-section div{
-     display: flex;
-     margin-right: 3px;
- }
+.prefecture-table .table-section {
+  float: left;
+  width: 33%;
+  margin: 0;
+}
 
- .table-section dt,
- .table-section dd{
-     width: 50%;
-     text-align: center;
-     margin: 0;
-     line-height: 2;
- }
+.prefecture-table dl {
+  overflow: hidden;
+}
 
- .table-section dd{
-     text-align: right;
-     font-weight: bold;
- }
+.table-section div {
+  display: flex;
+  margin-right: 3px;
+}
 
- .table-section a{
-    text-decoration: none;
-    color: #000;
- }
- 
- .table-section div:nth-of-type(odd) dt,
- .table-section div:nth-of-type(odd) dd{
-     background-color: #e4e4e4;;
- }
+.table-section dt,
+.table-section dd {
+  width: 50%;
+  text-align: center;
+  margin: 0;
+  line-height: 2;
+}
 
- .table-section:nth-of-type(1) div:nth-of-type(1) dd{
-    border-left: 1px solid #fff;
-    background-color: #b9e8ffff;
-    font-weight: normal;
-    text-align: center;
- }
+.table-section dd {
+  text-align: right;
+  font-weight: bold;
+}
 
- .table-section:nth-of-type(1) div:nth-of-type(1) dt{
-     background-color: #b9e8ffff;
+.table-section a {
+  text-decoration: none;
+  color: #000;
+}
 
- }
+.table-section div:nth-of-type(odd) dt,
+.table-section div:nth-of-type(odd) dd {
+  background-color: #e4e4e4;
+}
 
-  /* --------------------------------
+.table-section:nth-of-type(1) div:nth-of-type(1) dd {
+  border-left: 1px solid #fff;
+  background-color: #b9e8ffff;
+  font-weight: normal;
+  text-align: center;
+}
+
+.table-section:nth-of-type(1) div:nth-of-type(1) dt {
+  background-color: #b9e8ffff;
+}
+
+/* --------------------------------
  * detail
  * -------------------------------- */
 
 .detail {
-     margin: 5px 0 10px;
-     width: 1020px;
-     height: 600px;
-     border: 1px solid #8fd3f4;
-     border-radius: 2%;
+  margin: 5px 0 10px;
+  width: 1020px;
+  height: 600px;
+  border: 1px solid #8fd3f4;
+  border-radius: 2%;
 }
 
- .detail .graph{
-     margin: 5px 0 10px;
- }
+.detail .graph {
+  margin: 5px 0 10px;
+}
 
- .detail .graph .title{
-    font-weight: bold;
-    font-size: 2.0rem;
-    margin-left: 25px;
- }
+.detail .graph .title {
+  font-weight: bold;
+  font-size: 2.0rem;
+  margin-left: 25px;
+}
 
- .detail .graph .chart {
-   height: 500px;
-   margin: 10px;
- }
+.detail .graph .chart {
+  height: 500px;
+  margin: 10px;
+}
 
-   /* --------------------------------
+/* --------------------------------
  * footer
  * -------------------------------- */
 
- footer{
-     display: block;
-     height: 100px;
-     width: 100%;
-     background-color: #e4e4e4;
-     margin-top: 10px;
- }
+footer {
+  display: block;
+  height: 100px;
+  width: 100%;
+  background-color: #e4e4e4;
+  margin-top: 10px;
+}
 
- footer .copyright{
-     text-align: center;
-     color: #000;
-     margin: 0;
-     line-height: 8;
- }
+footer .copyright {
+  text-align: center;
+  color: #000;
+  margin: 0;
+  line-height: 8;
+}
 
-    /* --------------------------------
+/* --------------------------------
  * Loading
  * -------------------------------- */
 
- .loader,
+.loader,
 .loader:before,
 .loader:after {
   background: #ffffff;
@@ -467,6 +467,7 @@ header .title{
   width: 1em;
   height: 4em;
 }
+
 .loader {
   color: #ffffff;
   text-indent: -9999em;
@@ -479,39 +480,42 @@ header .title{
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
+
 .loader:before,
 .loader:after {
   position: absolute;
   top: 0;
   content: '';
 }
+
 .loader:before {
   left: -1.5em;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
+
 .loader:after {
   left: 1.5em;
 }
+
 @-webkit-keyframes load1 {
-  0%,
-  80%,
-  100% {
+  0%, 80%, 100% {
     box-shadow: 0 0;
     height: 4em;
   }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em;
   }
 }
+
 @keyframes load1 {
-  0%,
-  80%,
-  100% {
+  0%, 80%, 100% {
     box-shadow: 0 0;
     height: 4em;
   }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em;

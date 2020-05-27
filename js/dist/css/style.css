@@ -9,6 +9,8 @@ html{
 
 body{
     position: relative;
+    display: inline-block;
+    min-width: 100%;
     margin: 0;
     font-size: 1.2rem;
     font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
