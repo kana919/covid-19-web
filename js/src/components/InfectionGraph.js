@@ -26,7 +26,9 @@ export class InfectionGraph {
       count: 1
     };
     dateAxis.dateFormatter = new am4core.DateFormatter();
+    dateAxis.dateFormats.setKey("month", "MM月");
     dateAxis.dateFormats.setKey("day", "MM/dd");
+    dateAxis.periodChangeDateFormats.setKey("day", "MM/dd");
     let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
 
@@ -69,7 +71,7 @@ export class InfectionGraph {
     infection.dataFields.dateX = "reported_date";
     infection.name = "現在感染者数";
     infection.dataFields.valueY = "current_infected";
-    infection.tooltipHTML = "<span style='font-size:14px; color:#000000;'>感染者数:<b>{valueY.value}</b></span>";
+    infection.tooltipHTML = "<span style='font-size:14px; color:#000000;'>現在感染者数:<b>{valueY.value}</b></span>";
     infection.tooltipText = "[#000]{valueY.value}[/]";
     infection.tooltip.background.fill = am4core.color("#FFF");
     infection.tooltip.getStrokeFromObject = true;
