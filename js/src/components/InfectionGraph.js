@@ -71,7 +71,7 @@ export class InfectionGraph {
     infection.dataFields.dateX = "reported_date";
     infection.name = "現在感染者数";
     infection.dataFields.valueY = "current_infected";
-    infection.tooltipHTML = "<span style='font-size:14px; color:#000000;'>感染者数:<b>{valueY.value}</b></span>";
+    infection.tooltipHTML = "<span style='font-size:14px; color:#000000;'>現在感染者数:<b>{valueY.value}</b></span>";
     infection.tooltipText = "[#000]{valueY.value}[/]";
     infection.tooltip.background.fill = am4core.color("#FFF");
     infection.tooltip.getStrokeFromObject = true;
