@@ -38,7 +38,7 @@ export class InfectionMap {
     polygonTemplate.adapter.add("fill", function(fill, target) {
       if (target.dataItem.dataContext) {
         const index = parseInt(target.dataItem.dataContext.id.split("JP-")[1]) - 1;
-        const num = infectionInfo[index].daily[0].current_infected;
+        const num = infectionInfo[index].daily[0].new_infected;
         if (num > 1000) {
           return am4core.color("#8c0a00");
         }
