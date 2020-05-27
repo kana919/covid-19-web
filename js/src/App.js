@@ -14,7 +14,7 @@ let urlScheme = 'http://';
 if (process.env.NODE_ENV === 'production') {
   // 複雑化したら環境変数へ移行
   apiDomain = 'api.covid19jp.org';
-  urlScheme = 'https://';
+  urlScheme = 'http://';
 } else {
   console.log('This page runs on development env!!!');
 }
@@ -65,14 +65,12 @@ export class App {
             that.prefStats.render(infectionInfo[index]);
             // 詳細グラフの更新
             that.prefGraph.update(infectionInfo[index].daily);
-            let prefGrapTitle = document.querySelector(`detail-graph-title`);
-            prefGraphTitle.innerHTML = `${info.name}の日別発生状況`;
+            let prefGraphTitle = document.querySelector('#detail-graph-title');
+            prefGraphTitle.innerHTML = `${infectionInfo[index].name}の日別発生状況`;
           });
           // 地図の表示
           map.render();
         });
-
-
 
         // 各都道府県の感染情報テーブル表示
         this.table.render(infectionInfo);
