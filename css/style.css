@@ -280,21 +280,21 @@ header .title {
 
 .map-wrap .chart .label-box {
   position: absolute;
+  left: 40px;
+  bottom: 5px;
   width: 700px;
   height: 15px;
-  bottom: 5px;
-  left: 40px;
 }
 
 .map-wrap .chart .label-box .label::before {
   display: inline-block;
   content: '';
-  border: #fff solid 1px;
-  background-color: #8c0a00;
   width: 13px;
   height: 13px;
   font-size: 1.2rem;
   margin: 0px 5px;
+  border: #fff solid 1px;
+  background-color: #8c0a00;
 }
 
 .map-wrap .chart .label-box .label:nth-of-type(1)::before {
