@@ -19,8 +19,8 @@ body {
 
 .triangle.a {
   position: absolute;
-  top: -27px;
-  width: 1036px;
+  top: 0;
+  width: 1120px;
   height: 500px;
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   z-index: -2;
@@ -30,7 +30,7 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  border: 518px solid transparent;
+  border: 560px solid transparent;
   border-bottom-width: 250px;
   border-top-width: 250px;
   border-bottom-color: #fff;
@@ -39,7 +39,10 @@ body {
 }
 
 body .wrapper {
-  margin: 10px 10% 0;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  min-width: 100%;
 }
 
 *,
@@ -53,13 +56,14 @@ body .wrapper {
  * -------------------------------- */
 
 header {
-  width: 100%;
-  margin: 10px 0 20px;
+  width: 80%;
+  margin: 10px 0 0 100px;
 }
 
 header .title {
   font-size: 4.0rem;
   font-weight: normal;
+  text-align: left;
 }
 
 /* --------------------------------
@@ -67,18 +71,19 @@ header .title {
  * -------------------------------- */
 
 .nationwide-info {
-  position: relative;
-  margin-top: 40px;
-  width: 1120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 1020px;
   height: 300px;
   font-size: 1.2rem;
+  text-align: center;
+  margin: 40px auto;
 }
 
 .nationwide-info .graph {
-  position: absolute;
-  top: 0;
-  left: 520px;
-  width: 500px;
+  display: block;
+  min-width: 500px;
   height: 280px;
   border-radius: 5%;
   border: 1px solid #b9e8ff;
@@ -87,10 +92,8 @@ header .title {
 }
 
 .nationwide-info .data {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px;
+  display: block;
+  min-width: 500px;
   height: 280px;
   border-radius: 5%;
   border: 1px solid #b9e8ff;
@@ -209,12 +212,14 @@ header .title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 30px 0 0 10px;
+  text-align: left;
 }
 
 .data .current {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0 0 0 10px;
+  text-align: left;
 }
 
 /* --------------------------------
@@ -228,6 +233,8 @@ header .title {
   border: 1px solid #b9e8ff;
   border-radius: 2%;
   background-color: #fff;
+  text-align: center;
+  margin: 5px auto;
 }
 
 .map-wrap .chart {
@@ -355,7 +362,7 @@ header .title {
   font-size: 1.5rem;
   width: 1020px;
   border-spacing: 0;
-  margin: 5px 0;
+  margin: 5px auto;
   border-collapse: collapse;
 }
 
@@ -413,7 +420,7 @@ header .title {
  * -------------------------------- */
 
 .detail {
-  margin: 5px 0 10px;
+  margin: 5px auto;
   width: 1020px;
   height: 600px;
   border: 1px solid #8fd3f4;
