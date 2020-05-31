@@ -41,3 +41,15 @@ Deploy `dist` files to Google Storage via `gsutil`.
 ```
 $ gsutil rsync -R dist/ gs://www.covid19jp.org
 ```
+
+## Development tips
+
+### css format
+
+In order to manage css file easier, css formatter has been installed.
+If you want to format `css/style.css`, run following command.
+
+```
+$ cd js
+$ npx beautify-css ../css/style.css ../css/style.css
+```
