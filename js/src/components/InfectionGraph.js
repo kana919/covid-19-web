@@ -33,10 +33,10 @@ export class InfectionGraph {
     valueAxis.tooltip.disabled = true;
 
     let death = this.chart.series.push(new am4charts.LineSeries());
-    death.name = "死亡者数";
+    death.name = "死者数";
     death.dataFields.dateX = "reported_date";
     death.dataFields.valueY = "total_death";
-    death.tooltipHTML = "<span style='font-size:14px; color:#000000;'>死亡者数:<b>{valueY.value}</b></span>";
+    death.tooltipHTML = "<span style='font-size:14px; color:#000000;'>死者数:<b>{valueY.value}</b></span>";
     death.tooltipText = "[#000]{valueY.value}[/]";
     death.tooltip.background.fill = am4core.color("#FFF");
     death.tooltip.getFillFromObject = false;
@@ -90,6 +90,7 @@ export class InfectionGraph {
     // Add a legend
     this.chart.legend = new am4charts.Legend();
     this.chart.legend.position = "top";
+    this.chart.legend.reverseOrder = true;
   }
 
   update(data) {
