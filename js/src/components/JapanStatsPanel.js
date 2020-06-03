@@ -34,4 +34,15 @@ export class JapanStatsPanel {
     const currentInfectionNumElement = document.querySelector("#jp-current-infection-num");
     currentInfectionNumElement.innerHTML = infectionInfo[0].current_infected + '人';
   }
+
+  loaded() {
+    const statsLoader = document.querySelector('#nationwide-loader');
+    statsLoader.classList.add('none');
+    const date = document.querySelector('#date');
+    const title = document.querySelector('#title');
+    const boxWrapper = document.querySelector('#box-wrapper');
+    date.classList.remove('hidden');
+    title.classList.remove('hidden');
+    boxWrapper.classList.remove('hidden');
+  }
 }

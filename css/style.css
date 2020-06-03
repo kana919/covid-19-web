@@ -17,6 +17,14 @@ body {
   font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
 .triangle.a {
   position: absolute;
   top: 0;
@@ -91,6 +99,10 @@ header .title {
   padding: 10px;
 }
 
+.nationwide-info .graph .chart {
+  height: 250px;
+}
+
 .nationwide-info .data {
   display: block;
   min-width: 500px;
@@ -100,6 +112,10 @@ header .title {
   font-size: 1.5rem;
   padding: 10px;
   background-color: #fff;
+}
+
+.nationwide-info .loader {
+  margin: 105px auto;
 }
 
 .data .date {
@@ -114,7 +130,7 @@ header .title {
 }
 
 .data .box-wrapper {
-  margin: 20px 0 10px 70px;
+  position: relative;
 }
 
 .data .box {
@@ -124,7 +140,11 @@ header .title {
   border-radius: 10%;
   width: 120px;
   height: 120px;
-  margin-right: 10px;
+  margin: 10px 10px 0px 0px;
+}
+
+.data .box:first-child {
+  margin-left: 40px;
 }
 
 .infection.box::before,
@@ -209,16 +229,16 @@ header .title {
 }
 
 .data .total {
+  position: absolute;
   font-size: 1.8rem;
-  font-weight: bold;
-  margin: 30px 0 0 10px;
+  margin: 30px 0 0 15px;
   text-align: left;
 }
 
 .data .current {
+  position: absolute;
   font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0 0 0 10px;
+  margin: 61px 0 0 15px;
   text-align: left;
 }
 
@@ -296,6 +316,7 @@ header .title {
 .map-wrap .chart .label-box .label::before {
   display: inline-block;
   content: '';
+  vertical-align: text-top;
   width: 13px;
   height: 13px;
   font-size: 1.2rem;
@@ -341,6 +362,7 @@ header .title {
 
 .map-wrap .data {
   position: absolute;
+  top: 0;
   right: 0;
   width: 270px;
   height: 510px;
@@ -374,7 +396,7 @@ header .title {
 .map-wrap .recovery.box,
 .map-wrap .stayhome.box,
 .map-wrap .dead.box {
-  margin-top: 10px;
+  margin-top: 97px;
 }
 
 .map-wrap .total {
@@ -405,6 +427,10 @@ header .title {
 .map-wrap .button:hover {
   border: 2px solid #4fd3f4;
   opacity: 0.7;
+}
+
+.map-wrap .loader {
+  margin: 270px auto;
 }
 
 /* --------------------------------
@@ -496,6 +522,10 @@ header .title {
   margin: 10px;
 }
 
+.detail .loader {
+  margin: 270px auto;
+}
+
 /* --------------------------------
  * footer
  * -------------------------------- */
@@ -522,7 +552,7 @@ footer .copyright {
 .loader,
 .loader:before,
 .loader:after {
-  background: #ffffff;
+  background: #8fd3f4;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
@@ -530,7 +560,7 @@ footer .copyright {
 }
 
 .loader {
-  color: #ffffff;
+  color: #8fd3f4;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;

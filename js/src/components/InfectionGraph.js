@@ -6,6 +6,7 @@ import am4themes_material from "@amcharts/amcharts4/themes/material";
 
 export class InfectionGraph {
   constructor(divId) {
+    this.divId = divId;
     am4core.useTheme(am4themes_material);
     am4core.useTheme(am4themes_animated);
     this.chart = am4core.create(divId, am4charts.XYChart);
