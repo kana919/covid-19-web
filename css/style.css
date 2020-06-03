@@ -316,6 +316,7 @@ header .title {
 .map-wrap .chart .label-box .label::before {
   display: inline-block;
   content: '';
+  vertical-align: text-top;
   width: 13px;
   height: 13px;
   font-size: 1.2rem;
