@@ -68,6 +68,11 @@ export class InfectionMap {
     polygonTemplate.events.on("over", this.eventFunc);
   }
 
+  loaded() {
+    const mapChart = document.querySelector('#map-chart');
+    mapChart.classList.remove('hidden');
+  }
+
   addEventFunc(func) {
     this.eventFunc = func;
   }

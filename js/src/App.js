@@ -24,8 +24,8 @@ export class App {
     // コンポーネントの初期化
     this.jpStats = new JapanStatsPanel();
     this.prefStats = new PrefStatsPanel();
-    this.jpGraph = new InfectionGraph("graph");
-    this.prefGraph = new InfectionGraph("detail-graph");
+    this.jpGraph = new InfectionGraph("graph-chart");
+    this.prefGraph = new InfectionGraph("detail-graph-chart");
     this.table = new PrefStatsTable();
     this.maps = [
       new InfectionMap("map-hokkaido", false, PrefIdHokkaido),
@@ -43,8 +43,19 @@ export class App {
       japanInfectionInfo.then(infectionInfo => {
         // グラフを表示
         this.jpGraph.render(infectionInfo);
+        // ローディング完了処理
+        // XXX: 都道府県用のグラフと同じコンポーネントを使い回しているのでローディング完了処理を
+        //      共通のメソッド化できない.
+        //      Componentとviewを明確に分けるか、クラスを継承する形にした方が良い　
+        const graphLoader = document.querySelector('#graph-loader');
+        const graph = document.querySelector('#graph-chart');
+        graphLoader.classList.add('none');
+        graph.classList.remove('none');
+
         // 感染者情報を表示
         this.jpStats.render(infectionInfo);
+        // ローディング完了処理
+        this.jpStats.loaded();
       });
 
       /*
@@ -70,7 +81,12 @@ export class App {
           });
           // 地図の表示
           map.render(infectionInfo);
+          map.loaded();
         });
+        // ローディング完了処理
+        this.prefStats.loaded();
+        const mapLoader = document.querySelector('#map-loader');
+        mapLoader.classList.add('none');
 
         // 各都道府県の感染情報テーブル表示
         this.table.render(infectionInfo);
@@ -95,6 +111,16 @@ export class App {
 
         // 東京の感染情報グラフの表示
         this.prefGraph.render(infectionInfo[12].daily);
+        // ローディング完了処理
+        // XXX: 全国用のグラフと同じコンポーネントを使い回しているのでローディング完了処理を
+        //      共通のメソッド化できない.
+        //      Componentとviewを明確に分けるか、クラスを継承する形にした方が良い　
+        const detailGraphLoader = document.querySelector('#detail-graph-loader');
+        const detailGraphTitle = document.querySelector('#detail-graph-title');
+        const detailGraph = document.querySelector('#detail-graph-chart');
+        detailGraphLoader.classList.add('none');
+        detailGraphTitle.classList.remove('none');
+        detailGraph.classList.remove('none');
       });
     } catch (error) {
       console.error(`${error}`);

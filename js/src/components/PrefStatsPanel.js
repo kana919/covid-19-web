@@ -37,4 +37,9 @@ export class PrefStatsPanel {
       currentInfectionNumElement.innerHTML = '- 人';
     }
   }
+
+  loaded() {
+    const mapData = document.querySelector('#map-data');
+    mapData.classList.remove('hidden');
+  }
 }

@@ -17,6 +17,14 @@ body {
   font-family: "Hiragino Kaku Gothic ProN",Meiryo ,sans-serief;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
 .triangle.a {
   position: absolute;
   top: 0;
@@ -91,6 +99,10 @@ header .title {
   padding: 10px;
 }
 
+.nationwide-info .graph .chart {
+  height: 250px;
+}
+
 .nationwide-info .data {
   display: block;
   min-width: 500px;
@@ -100,6 +112,10 @@ header .title {
   font-size: 1.5rem;
   padding: 10px;
   background-color: #fff;
+}
+
+.nationwide-info .loader {
+  margin: 105px auto;
 }
 
 .data .date {
@@ -341,6 +357,7 @@ header .title {
 
 .map-wrap .data {
   position: absolute;
+  top: 0;
   right: 0;
   width: 270px;
   height: 510px;
@@ -405,6 +422,10 @@ header .title {
 .map-wrap .button:hover {
   border: 2px solid #4fd3f4;
   opacity: 0.7;
+}
+
+.map-wrap .loader {
+  margin: 270px auto;
 }
 
 /* --------------------------------
@@ -496,6 +517,10 @@ header .title {
   margin: 10px;
 }
 
+.detail .loader {
+  margin: 270px auto;
+}
+
 /* --------------------------------
  * footer
  * -------------------------------- */
@@ -522,7 +547,7 @@ footer .copyright {
 .loader,
 .loader:before,
 .loader:after {
-  background: #ffffff;
+  background: #8fd3f4;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
@@ -530,7 +555,7 @@ footer .copyright {
 }
 
 .loader {
-  color: #ffffff;
+  color: #8fd3f4;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;

@@ -14,35 +14,42 @@
             <section class="nationwide">
                 <div class="nationwide-info">
                     <div class="data">
-                        <time id="date" class="date" datetime="2020-05-07">- 月 - 日 (-)</time>
-                        <p class="title">全国の発生状況</p>
-                        <div class="box-wrapper">
-                            <div class="infection box">
-                                <p class="category">感染者数</p>
-                                <p id="jp-infection-num" class="num">- 人</p>
-                                <p id="jp-total-infection-num" class="total-num">- 人</p>
-                                <p id="jp-current-infection-num" class="current-num">- 人</p>
+                        <div id="nationwide-loader" class="loader">
+                            <time id="date" class="date" datetime="2020-05-07">- 月 - 日 (-)</time>
+                            <p class="title">全国の発生状況</p>
+                            <div class="box-wrapper">
+                                <div class="infection box">
+                                    <p class="category">感染者数</p>
+                                    <p id="jp-infection-num" class="num">- 人</p>
+                                    <p id="jp-total-infection-num" class="total-num">- 人</p>
+                                    <p id="jp-current-infection-num" class="current-num">- 人</p>
+                                </div>
+                                <div class="dead box">
+                                    <p class="category">死者数</p>
+                                    <p id="jp-dead-num" class="num">- 人</p>
+                                    <p id="jp-total-dead-num" class="total-num">- 人</p>
+                                </div>
+                                <div class="recovery box">
+                                    <p class="category">回復者数</p>
+                                    <p id="jp-recovery-num" class="num">- 人</p>
+                                    <p id="jp-total-recovery-num" class="total-num">- 人</p>
+                                </div>
                             </div>
-                            <div class="dead box">
-                                <p class="category">死者数</p>
-                                <p id="jp-dead-num" class="num">- 人</p>
-                                <p id="jp-total-dead-num" class="total-num">- 人</p>
-                            </div>
-                            <div class="recovery box">
-                                <p class="category">回復者数</p>
-                                <p id="jp-recovery-num" class="num">- 人</p>
-                                <p id="jp-total-recovery-num" class="total-num">- 人</p>
-                            </div>
+                            <p class="total">累計</p>
+                            <p class="current">現在</p>
                         </div>
-                        <p class="total">累計</p>
-                        <p class="current">現在</p>
                     </div>
-                    <div id="graph" class="graph"></div>
+                    <div class="graph">
+                      <div id="graph-loader" class="loader"></div>
+                      <div id="graph-chart" class="chart"></div>
+                    </div>
                 </div>
             </section>
             <section class="map">
                 <div class="map-wrap">
-                    <div id="map" class="map chart">
+                    <div id="map-loader" class="loader">
+                    </div>
+                    <div id="map-chart" class="map chart hidden">
                       <div id="map-hokkaido" class="hokkaido"></div>
                       <svg class="map-line-hokkaido" width="320" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
                         <polyline stroke="#595757" stroke-width="0.5" points="0 308.2 110.9 308.2 406.4 130.5 406.4 1" fill="#fff"></polyline>
@@ -62,7 +69,7 @@
                         <span class="label">0人</span>
                       </div>
                     </div>
-                    <div class="data">
+                    <div id="map-data" class="data hidden">
                         <p id="prefecture-name" class="prefecture-name"></p>
                         <div class="map infection box">
                             <p class="category">感染者数</p>
@@ -292,8 +299,9 @@
             </section>
             <section class="detail">
                 <div class="graph">
-                  <p id="detail-graph-title" class="title">東京都の日別発生状況</p>
-                  <div id="detail-graph" class="chart"></div>
+                  <div id="detail-graph-loader" class="loader"></div>
+                  <p id="detail-graph-title" class="title none">東京都の日別発生状況</p>
+                  <div id="detail-graph-chart" class="chart none"></div>
                 </div>
             </section>
         </div>
