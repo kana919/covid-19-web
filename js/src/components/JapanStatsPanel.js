@@ -41,8 +41,8 @@ export class JapanStatsPanel {
     const date = document.querySelector('#date');
     const title = document.querySelector('#title');
     const boxWrapper = document.querySelector('#box-wrapper');
-    date.classList.remove('hidden');
+    date.classList.remove('none');
     title.classList.remove('hidden');
-    boxWrapper.classList.remove('hidden');
+    boxWrapper.classList.remove('none');
   }
 }
