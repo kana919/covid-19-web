@@ -27,9 +27,9 @@ export class InfectionGraph {
       count: 1
     };
     dateAxis.dateFormatter = new am4core.DateFormatter();
-    dateAxis.dateFormats.setKey("month", "MM月");
-    dateAxis.dateFormats.setKey("day", "MM/dd");
-    dateAxis.periodChangeDateFormats.setKey("day", "MM/dd");
+    dateAxis.dateFormats.setKey("month", "M月");
+    dateAxis.dateFormats.setKey("day", "M/d");
+    dateAxis.periodChangeDateFormats.setKey("day", "M/d");
     let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
 
