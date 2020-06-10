@@ -81,14 +81,17 @@ header .title {
  * -------------------------------- */
 
 .nationwide-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   width: 1020px;
   height: 300px;
   font-size: 1.2rem;
   text-align: center;
-  margin: 40px auto;
+  margin: 40px auto 20px auto;
+}
+
+.flex-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .nationwide-info .graph {
@@ -244,19 +247,37 @@ header .title {
   text-align: left;
 }
 
+.instructions
+{
+  display: block;
+  text-align: right;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 11px 0 0;
+  color: #888;
+}
+
+.instructions .aggregation-date,
+.instructions .update-date
+{
+  display: inline-block;
+  margin: 0;
+}
 /* --------------------------------
  * map
  * -------------------------------- */
-
-.map-wrap {
+.map-wrap{
   position: relative;
   width: 1020px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.map-area {
   height: 600px;
   border: 1px solid #b9e8ff;
   border-radius: 2%;
   background-color: #fff;
-  text-align: center;
-  margin: 5px auto;
 }
 
 .map-wrap .chart {
@@ -444,7 +465,7 @@ header .title {
   font-size: 1.5rem;
   width: 1020px;
   border-spacing: 0;
-  margin: 5px auto;
+  margin: 20px auto;
   border-collapse: collapse;
 }
 
