@@ -27,6 +27,7 @@ export class InfectionGraph {
       count: 1
     };
     dateAxis.dateFormatter = new am4core.DateFormatter();
+    dateAxis.skipEmptyPeriods = true;
     dateAxis.dateFormats.setKey("month", "M月");
     dateAxis.dateFormats.setKey("day", "M/d");
     dateAxis.periodChangeDateFormats.setKey("day", "M/d");
