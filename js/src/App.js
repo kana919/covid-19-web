@@ -91,7 +91,10 @@ export class App {
         this.prefStats.loaded();
         const mapLoader = document.querySelector('#map-loader');
         mapLoader.classList.add('none');
-        this.mapInstraction.render(infectionInfo[0].reported_date, infectionInfo[0].updated_at);
+        this.mapInstraction.render(
+          infectionInfo[0].daily[0].reported_date,
+          infectionInfo[0].daily[0].updated_at
+        );
 
         // 各都道府県の感染情報テーブル表示
         this.table.render(infectionInfo);
