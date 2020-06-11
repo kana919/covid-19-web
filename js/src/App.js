@@ -3,6 +3,7 @@ import { PrefStatsPanel } from './components/PrefStatsPanel.js'
 import { PrefStatsTable } from './components/PrefStatsTable.js'
 import { InfectionGraph } from './components/InfectionGraph.js'
 import { InfectionMap } from './components/InfectionMap.js'
+import { Instruction } from './components/Instruction.js'
 import { PrefIdHokkaido, PrefIdMiddle, PrefIdOkinawa } from "./components/JapanMap.js";
 import { fetchFromAPI } from './apiUtil.js'
 
@@ -25,6 +26,7 @@ export class App {
     this.jpStats = new JapanStatsPanel();
     this.prefStats = new PrefStatsPanel();
     this.jpGraph = new InfectionGraph("graph-chart");
+    this.jpInstraction = new Instruction("nationwide-aggregation-date", "nationwide-update-date")
     this.prefGraph = new InfectionGraph("detail-graph-chart");
     this.table = new PrefStatsTable();
     this.maps = [
@@ -32,6 +34,7 @@ export class App {
       new InfectionMap("map-middle", true, PrefIdMiddle),
       new InfectionMap("map-okinawa", false, PrefIdOkinawa),
     ];
+    this.mapInstraction = new Instruction("map-aggregation-date", "map-update-date")
   }
 
   mount() {
@@ -56,6 +59,7 @@ export class App {
         this.jpStats.render(infectionInfo);
         // ローディング完了処理
         this.jpStats.loaded();
+        this.jpInstraction.render(infectionInfo[0].reported_date, infectionInfo[0].updated_at);
       });
 
       /*
@@ -87,6 +91,7 @@ export class App {
         this.prefStats.loaded();
         const mapLoader = document.querySelector('#map-loader');
         mapLoader.classList.add('none');
+        this.mapInstraction.render(infectionInfo[0].reported_date, infectionInfo[0].updated_at);
 
         // 各都道府県の感染情報テーブル表示
         this.table.render(infectionInfo);
