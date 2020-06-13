@@ -39,22 +39,22 @@ export class InfectionMap {
       if (target.dataItem.dataContext) {
         const index = parseInt(target.dataItem.dataContext.id.split("JP-")[1]) - 1;
         const num = infectionInfo[index].daily[0].current_infected;
-        if (num > 1000) {
+        if (num >= 1000) {
           return am4core.color("#8c0a00");
         }
-        if (num > 500) {
+        if (num >= 500) {
           return am4core.color("#bf2a11");
         }
-        if (num > 100) {
+        if (num >= 100) {
           return am4core.color("#ea5432");
         }
-        if (num > 50) {
+        if (num >= 50) {
           return am4core.color("#ff771d");
         }
-        if (num > 10) {
+        if (num >= 10) {
           return am4core.color("#ff9d56");
         }
-        if (num > 1) {
+        if (num >= 1) {
           return am4core.color("#ffceab");
         }
         return am4core.color("#eaeaea");
