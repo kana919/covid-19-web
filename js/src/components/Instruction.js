@@ -14,7 +14,7 @@ export class Instruction {
     const aggrDateFmt = moment(aggrDate).format('MMMMDo');
     aggrDateElement.innerHTML = `${aggrDateFmt}時点の集計`;
     const updateDateElement = document.querySelector(`#${this.updateDateId}`);
-    const updateDateFmt = moment(updateDate).format('MMMMDohh時mm分');
+    const updateDateFmt = moment(updateDate).format('MMMMDokk時mm分');
     updateDateElement.innerHTML = `更新日時 ${updateDateFmt}`
   }
 }
